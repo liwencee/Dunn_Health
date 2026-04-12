@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "DigitoWebs - The Best Web Design Company",
-    template: "%s | DigitoWebs",
+    default: "Slatech Solutions - Turning Ideas into Powerful Digital Brands",
+    template: "%s | Slatech Solutions",
   },
   description:
     "We help small and large businesses create stunning websites that are beautiful, fast, secure, and mobile-friendly. 10+ years of experience.",
@@ -28,11 +29,12 @@ export const metadata: Metadata = {
     "SEO",
     "website hosting",
     "digital agency",
+    "Slatech Solutions",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "DigitoWebs",
+    siteName: "Slatech Solutions",
   },
 };
 
@@ -50,6 +52,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

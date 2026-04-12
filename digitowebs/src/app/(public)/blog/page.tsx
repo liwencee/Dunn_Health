@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Latest insights, tips, and trends from DigitoWebs — web design, SEO, e-commerce, and more.",
+    "Latest insights, tips, and trends from Slatech Solutions — web design, SEO, e-commerce, and more.",
 };
 
 // Static blog posts for now — will be replaced with Supabase queries

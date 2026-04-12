@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(rm -rf node_modules .next)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://registry.npmjs.org/next)",
+      "Bash(ping -n 2 registry.npmjs.org)",
+      "Bash(npm config:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 2768 //F)",
+      "Bash(npx next:*)"
     ]
   }
 }

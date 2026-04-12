@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const services = [
   {
@@ -75,43 +76,46 @@ export function ServicesSection() {
     <section id="services" className="py-20 lg:py-28 bg-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block text-primary text-sm font-semibold uppercase tracking-wider mb-3">
-            Our Services
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            What We <span className="text-primary">Offer</span>
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            From stunning designs to powerful e-commerce solutions, we provide
-            everything you need to succeed online.
-          </p>
-        </div>
+        <AnimateOnScroll animation="fade-up">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="inline-block text-primary text-sm font-semibold uppercase tracking-wider mb-3">
+              Our Services
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              What We <span className="text-primary">Offer</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              From stunning designs to powerful e-commerce solutions, we provide
+              everything you need to succeed online.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <Link
-              key={service.title}
-              href={service.href}
-              className="group bg-white rounded-2xl p-7 shadow-sm border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300"
-            >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
-                {service.icon}
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-              <span className="inline-flex items-center text-sm font-medium text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more
-                <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </Link>
+          {services.map((service, i) => (
+            <AnimateOnScroll key={service.title} animation="fade-up" delay={i * 100}>
+              <Link
+                href={service.href}
+                className="group bg-white rounded-2xl p-7 shadow-sm border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 block hover:bg-primary/[0.02]"
+              >
+                <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
+                <span className="inline-flex items-center text-sm font-medium text-primary mt-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  Learn more
+                  <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </Link>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

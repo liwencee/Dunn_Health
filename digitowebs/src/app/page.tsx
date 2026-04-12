@@ -7,6 +7,7 @@ import { StatsSection } from "@/components/sections/stats";
 import { BlogSection } from "@/components/sections/blog-preview";
 import { CTASection } from "@/components/sections/cta";
 import { ContactSection } from "@/components/sections/contact-preview";
+import { TestimonialsSection } from "@/components/sections/testimonials";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <StatsSection />
       <PortfolioSection />
       <WhyChooseUsSection />
+      <TestimonialsSection />
       <BlogSection />
       <CTASection />
       <ContactSection />

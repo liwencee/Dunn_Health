@@ -54,7 +54,7 @@ export async function PUT(
       .from("articles")
       .select("published_at")
       .eq("id", id)
-      .single();
+      .single() as { data: { published_at: string | null } | null };
 
     if (existing && !existing.published_at) {
       (updateData as Record<string, unknown>).published_at =
@@ -64,7 +64,7 @@ export async function PUT(
 
   const { data, error } = await supabase
     .from("articles")
-    .update(updateData)
+    .update(updateData as never)
     .eq("id", id)
     .select()
     .single();
@@ -81,7 +81,7 @@ export async function PUT(
         tag_ids.map((tag_id) => ({
           article_id: id,
           tag_id,
-        }))
+        })) as never[]
       );
     }
   }

@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ errors: validation.errors }, { status: 400 });
   }
 
-  const { page, per_page, status, category, search, sort, order } =
+  const { page = 1, per_page = 10, status, category, search, sort = "created_at", order = "desc" } =
     validation.data;
   const offset = (page - 1) * per_page;
 
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
       author_id: user.id,
       published_at:
         articleData.status === "published" ? new Date().toISOString() : null,
-    })
+    } as never)
     .select()
     .single();
 
@@ -110,11 +110,12 @@ export async function POST(request: NextRequest) {
 
   // Insert tag associations
   if (tag_ids?.length && data) {
+    const articleId = (data as { id: string }).id;
     await supabase.from("article_tags").insert(
       tag_ids.map((tag_id) => ({
-        article_id: data.id,
+        article_id: articleId,
         tag_id,
-      }))
+      })) as never[]
     );
   }
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Web design, e-commerce, SEO, hosting, and management services by DigitoWebs. Everything you need to succeed online.",
+    "Web design, e-commerce, SEO, hosting, and management services by Slatech Solutions. Everything you need to succeed online.",
 };
 
 const services = [

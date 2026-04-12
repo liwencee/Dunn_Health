@@ -4,7 +4,7 @@ import { ContactSection } from "@/components/sections/contact-preview";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with DigitoWebs for a free consultation. We'd love to hear about your project.",
+    "Get in touch with Slatech Solutions for a free consultation. We'd love to hear about your project.",
 };
 
 export default function ContactPage() {

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -41,9 +42,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">D</span>
-            </div>
+            <Image src="/logo.svg" alt="Slatech Solutions" width={48} height={48} />
           </Link>
           <h1 className="text-2xl font-bold text-foreground mt-4">
             Welcome Back
@@ -75,7 +74,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-lg border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                placeholder="admin@digitowebs.com"
+                placeholder="admin@slatechsolutions.com"
               />
             </div>
             <div>

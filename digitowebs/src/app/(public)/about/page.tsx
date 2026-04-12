@@ -5,7 +5,7 @@ import { StatsSection } from "@/components/sections/stats";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about DigitoWebs — 10+ years of experience building stunning, fast, and secure websites for businesses of all sizes.",
+    "Learn about Slatech Solutions — 10+ years of experience building stunning, fast, and secure websites for businesses of all sizes.",
 };
 
 const team = [
@@ -28,7 +28,7 @@ export default function AboutPage() {
             Building Digital <span className="text-primary">Excellence</span>
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            DigitoWebs is a leading web design agency dedicated to transforming
+            Slatech Solutions is a leading web design agency dedicated to transforming
             ideas into powerful digital experiences since 2015.
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 2015, DigitoWebs started with a simple mission: to
+                  Founded in 2015, Slatech Solutions started with a simple mission: to
                   help businesses establish a powerful online presence through
                   exceptional web design and development.
                 </p>

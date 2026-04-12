@@ -1,22 +1,42 @@
+"use client";
+
+import { useCounter } from "@/hooks/use-counter";
+import { useIntersection } from "@/hooks/use-intersection";
+
 const stats = [
-  { value: "10+", label: "Years of Experience" },
-  { value: "2,000+", label: "Projects Completed" },
-  { value: "500+", label: "Happy Clients" },
-  { value: "99%", label: "Client Satisfaction" },
+  { value: 10, suffix: "+", label: "Years of Experience" },
+  { value: 2000, suffix: "+", label: "Projects Completed" },
+  { value: 500, suffix: "+", label: "Happy Clients" },
+  { value: 99, suffix: "%", label: "Client Satisfaction" },
 ];
 
-export function StatsSection() {
+function StatItem({ value, suffix, label, start }: { value: number; suffix: string; label: string; start: boolean }) {
+  const count = useCounter(value, 2500, start);
   return (
-    <section className="py-16 bg-secondary">
+    <div className="text-center">
+      <p className="text-4xl sm:text-5xl font-bold text-primary mb-2">
+        {count.toLocaleString()}{suffix}
+      </p>
+      <p className="text-sm text-gray-300 font-medium">{label}</p>
+    </div>
+  );
+}
+
+export function StatsSection() {
+  const { ref, isVisible } = useIntersection(0.3);
+
+  return (
+    <section className="py-16 bg-secondary" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-4xl sm:text-5xl font-bold text-primary mb-2">
-                {stat.value}
-              </p>
-              <p className="text-sm text-gray-300 font-medium">{stat.label}</p>
-            </div>
+            <StatItem
+              key={stat.label}
+              value={stat.value}
+              suffix={stat.suffix}
+              label={stat.label}
+              start={isVisible}
+            />
           ))}
         </div>
       </div>

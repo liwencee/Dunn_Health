@@ -1,3 +1,5 @@
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+
 const reasons = [
   {
     icon: (
@@ -60,37 +62,40 @@ export function WhyChooseUsSection() {
     <section className="py-20 lg:py-28 bg-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block text-primary text-sm font-semibold uppercase tracking-wider mb-3">
-            Why Choose Us
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Several Things Define Us As a{" "}
-            <span className="text-primary">Company</span>
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            We combine expertise, dedication, and innovation to deliver web
-            solutions that truly make a difference for your business.
-          </p>
-        </div>
+        <AnimateOnScroll animation="fade-up">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="inline-block text-primary text-sm font-semibold uppercase tracking-wider mb-3">
+              Why Choose Us
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Several Things Define Us As a{" "}
+              <span className="text-primary">Company</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              We combine expertise, dedication, and innovation to deliver web
+              solutions that truly make a difference for your business.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         {/* Reasons Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reasons.map((reason) => (
-            <div
-              key={reason.title}
-              className="bg-white rounded-2xl p-7 border border-border hover:border-primary/20 hover:shadow-md transition-all duration-300"
-            >
-              <div className="w-14 h-14 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-5">
-                {reason.icon}
+          {reasons.map((reason, i) => (
+            <AnimateOnScroll key={reason.title} animation="fade-up" delay={i * 100}>
+              <div
+                className="group bg-white rounded-2xl p-7 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:bg-primary/[0.02] cursor-default"
+              >
+                <div className="w-14 h-14 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                  {reason.icon}
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {reason.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {reason.description}
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                {reason.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {reason.description}
-              </p>
-            </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>
