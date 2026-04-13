@@ -192,7 +192,7 @@ export function Header() {
             <button
               type="button"
               onClick={toggleMobile}
-              className="lg:hidden relative z-50 p-2.5 text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300"
+              className="lg:hidden relative z-[120] p-2.5 text-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300"
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
@@ -223,7 +223,7 @@ export function Header() {
 
       {/* Mobile Nav Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/50 z-[100] lg:hidden transition-opacity duration-300 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={closeMobile}
@@ -236,7 +236,7 @@ export function Header() {
         id="mobile-navigation"
         role="navigation"
         aria-label="Mobile navigation"
-        className={`fixed top-0 right-0 z-40 h-full w-[300px] max-w-[85vw] bg-white shadow-2xl lg:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 z-[110] h-full w-[300px] max-w-[85vw] bg-white shadow-2xl lg:hidden transition-transform duration-300 ease-in-out ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
