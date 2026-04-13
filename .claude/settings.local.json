@@ -13,7 +13,16 @@
       "Bash(findstr :3000)",
       "Bash(timeout 10)",
       "Bash(ping -n 8 127.0.0.1)",
-      "Bash(ping -n 12 127.0.0.1)"
+      "Bash(ping -n 12 127.0.0.1)",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://digitowebs.com/\")",
+      "Bash(curl -s \"https://digitowebs.com/wp-content/uploads/elementor/css/post-9.css\")",
+      "Bash(grep -o '#[0-9a-fA-F]\\\\{3,6\\\\}')",
+      "Bash(curl -s \"https://digitowebs.com/wp-content/uploads/elementor/css/post-176.css\")",
+      "Read(//c/Users/DELL/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/5cc55944-57a4-4929-b913-23e774b4e778/4664fc1d-0d64-4a94-a308-65647a285c21/skills/docx/**)",
+      "Bash(python scripts/office/unpack.py \"C:\\\\Users\\\\DELL\\\\Downloads\\\\Slatech_Chatbot_Script \\(1\\).docx\" unpacked/)",
+      "Bash(pip install:*)",
+      "Bash(pandoc \"C:\\\\Users\\\\DELL\\\\Downloads\\\\Slatech_Chatbot_Script \\(1\\).docx\" -o output.md)",
+      "Bash(python -c ':*)"
     ]
   }
 }
