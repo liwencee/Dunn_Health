@@ -12,32 +12,29 @@ const securityHeaders = {
 };
 
 export async function middleware(request: NextRequest) {
-  // 1. Rate limiting for API routes
-  if (request.nextUrl.pathname.startsWith("/api/")) {
-    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    // Rate limiting will be handled by @upstash/ratelimit when configured
-    // For now, add basic IP tracking header
-    request.headers.set("x-client-ip", ip);
-  }
-
-  // 2. Supabase session refresh + auth protection
+  // 1. Supabase session refresh + auth protection
   const response = await updateSession(request);
 
-  // 3. Apply security headers
+  // 2. Apply security headers
   for (const [key, value] of Object.entries(securityHeaders)) {
     response.headers.set(key, value);
   }
 
-  // 4. Content Security Policy
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+  // 3. Content Security Policy
+  // NOTE: No nonce — Next.js inline hydration scripts don't carry a nonce by
+  // default, so adding one here would block ALL client-side JavaScript in
+  // production. 'unsafe-inline' is required for Next.js to function.
   const isDev = process.env.NODE_ENV === "development";
   const csp = [
     `default-src 'self'`,
-    `script-src 'self' 'nonce-${nonce}' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.google.com https://www.gstatic.com`,
+    // 'unsafe-inline' is required for Next.js hydration scripts
+    `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.google.com https://www.gstatic.com`,
     `style-src 'self' 'unsafe-inline'`,
-    `img-src 'self' data: blob: https://*.supabase.co https://www.google.com https://www.gstatic.com`,
-    `font-src 'self'`,
-    `connect-src 'self' https://*.supabase.co`,
+    // Allow images from self, data URIs, Supabase storage, Google, and HTTPS (for profile photos)
+    `img-src 'self' data: blob: https:`,
+    `font-src 'self' data:`,
+    // Allow connections to Supabase and WhatsApp (used by chatbot)
+    `connect-src 'self' https://*.supabase.co wss://*.supabase.co https://wa.me`,
     `frame-src https://www.google.com https://maps.google.com`,
     `frame-ancestors 'none'`,
     `base-uri 'self'`,
@@ -45,7 +42,6 @@ export async function middleware(request: NextRequest) {
   ].join("; ");
 
   response.headers.set("Content-Security-Policy", csp);
-  response.headers.set("x-nonce", nonce);
 
   return response;
 }
