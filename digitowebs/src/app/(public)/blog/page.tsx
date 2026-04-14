@@ -10,34 +10,34 @@ export const metadata: Metadata = {
 // Static blog posts for now — will be replaced with Supabase queries
 const posts = [
   {
-    slug: "web-design-trends-2026",
-    title: "10 Web Design Trends to Watch in 2026",
+    slug: "why-nigerian-businesses-need-professional-website",
+    title: "7 Reasons Your Nigerian Business Needs a Professional Website in 2026",
     excerpt:
-      "Discover the latest web design trends that are shaping the digital landscape this year, from AI-driven layouts to immersive 3D experiences.",
-    category: "Design",
+      "Over 70% of Nigerian consumers research businesses online before buying. A professional website isn't optional — it's your most powerful sales tool in Lagos and beyond.",
+    category: "Business",
     date: "Apr 10, 2026",
     readTime: "5 min read",
-    color: "bg-blue-500",
+    color: "bg-blue-600",
   },
   {
-    slug: "boost-seo-rankings",
-    title: "How to Boost Your Website's SEO Rankings",
+    slug: "how-to-rank-on-google-nigeria-seo-guide",
+    title: "How to Rank on Google in Nigeria: SEO Guide for Lagos Businesses",
     excerpt:
-      "Learn proven strategies to improve your search engine rankings and drive more organic traffic to your website.",
+      "Step-by-step SEO strategies tailored for Nigerian businesses. Learn how to appear on the first page of Google for keywords your Lagos customers are actually searching.",
     category: "SEO",
     date: "Apr 5, 2026",
     readTime: "7 min read",
-    color: "bg-green-500",
+    color: "bg-green-600",
   },
   {
-    slug: "mobile-friendly-website",
-    title: "Why Every Business Needs a Mobile-Friendly Website",
+    slug: "ecommerce-in-nigeria-how-to-start-selling-online",
+    title: "E-Commerce in Nigeria: How to Start Selling Online from Lagos",
     excerpt:
-      "Mobile traffic accounts for over 60% of web visits. Here's why responsive design is critical for your business success.",
-    category: "Business",
+      "Nigeria's e-commerce market is booming. Discover how Slatech helps Lagos entrepreneurs launch profitable online stores that accept Paystack, bank transfers, and more.",
+    category: "E-Commerce",
     date: "Mar 28, 2026",
-    readTime: "4 min read",
-    color: "bg-purple-500",
+    readTime: "6 min read",
+    color: "bg-purple-600",
   },
   {
     slug: "ecommerce-conversion-tips",
