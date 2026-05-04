@@ -13,8 +13,8 @@ const info = [
   {
     icon: "📞",
     label: "Phone",
-    value: "(912) 999-0000",
-    link: "tel:+19129990000",
+    value: "+1 (252) 245-2590",
+    link: "tel:+12522452590",
   },
   {
     icon: "✉️",

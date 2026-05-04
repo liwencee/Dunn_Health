@@ -49,7 +49,7 @@ export function Header() {
       >
         <div className="container" style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
           <span>📍 140 The Lakes Blvd Suite 218, Kingsland GA 31548</span>
-          <span>📞 <a href="tel:+19129990000" style={{ color: "#fff", textDecoration: "none" }}>(912) 999-0000</a></span>
+          <span>📞 <a href="tel:+12522452590" style={{ color: "#fff", textDecoration: "none" }}>+1 (252) 245-2590</a></span>
           <span>✉️ <a href="mailto:info@dunnbehavioralhealth.us" style={{ color: "#fff", textDecoration: "none" }}>info@dunnbehavioralhealth.us</a></span>
         </div>
       </div>

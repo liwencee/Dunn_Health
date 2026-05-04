@@ -105,7 +105,7 @@ export function Footer() {
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {[
                   { label: "Address", value: "140 The Lakes Blvd Suite 218\nKingsland, GA 31548 USA", href: null },
-                  { label: "Phone", value: "(912) 999-0000", href: "tel:+19129990000" },
+                  { label: "Phone", value: "+1 (252) 245-2590", href: "tel:+12522452590" },
                   { label: "Email", value: "info@dunnbehavioralhealth.us", href: "mailto:info@dunnbehavioralhealth.us" },
                   { label: "Hours", value: "Mon–Fri: 8am – 6pm\nSaturday: 9am – 2pm", href: null },
                 ].map((item) => (
