@@ -32,9 +32,9 @@ export function Header() {
         right: 0,
         zIndex: 1000,
         transition: "all 0.4s ease",
-        backgroundColor: scrolled ? "var(--primary-dark)" : "transparent",
-        boxShadow: scrolled ? "0 2px 30px rgba(0,0,0,0.18)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "none",
+        backgroundColor: "#fff",
+        boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.10)" : "0 1px 4px rgba(0,0,0,0.06)",
+        borderBottom: "1px solid rgba(0,0,0,0.07)",
       }}
     >
       {/* Top bar */}
@@ -76,7 +76,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               style={{
-                color: "rgba(255,255,255,0.9)",
+                color: "var(--primary, #1a4a5a)",
                 textDecoration: "none",
                 fontSize: "0.9rem",
                 fontWeight: 600,
@@ -84,8 +84,8 @@ export function Header() {
                 transition: "color 0.2s",
                 textTransform: "uppercase",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-light)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.9)")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent, #c9a84c)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--primary, #1a4a5a)")}
             >
               {link.label}
             </Link>
@@ -106,7 +106,7 @@ export function Header() {
           aria-label="Toggle menu"
         >
           {[0, 1, 2].map((i) => (
-            <span key={i} style={{ display: "block", width: 26, height: 2.5, backgroundColor: "#fff", borderRadius: 2, transition: "all 0.3s" }} />
+            <span key={i} style={{ display: "block", width: 26, height: 2.5, backgroundColor: "var(--primary, #1a4a5a)", borderRadius: 2, transition: "all 0.3s" }} />
           ))}
         </button>
       </div>
