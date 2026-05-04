@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Nunito } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ChatWidget } from "@/components/ui/chat-widget";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   );
