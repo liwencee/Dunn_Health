@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -57,22 +58,15 @@ export function Header() {
       {/* Main nav */}
       <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem 1.5rem" }}>
         {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <div style={{
-            width: 48, height: 48,
-            backgroundColor: "var(--accent)",
-            borderRadius: "50%",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: "1.4rem",
-          }}>🧠</div>
-          <div>
-            <div style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.5rem", fontWeight: 700, color: "#fff", lineHeight: 1 }}>
-              Dunn
-            </div>
-            <div style={{ fontSize: "0.72rem", color: "var(--accent-light)", letterSpacing: "0.12em", textTransform: "uppercase" }}>
-              Behavioral Health
-            </div>
-          </div>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <Image
+            src="/logo.png"
+            alt="Dunn Behavioral Health"
+            width={180}
+            height={60}
+            style={{ objectFit: "contain", height: 52, width: "auto" }}
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

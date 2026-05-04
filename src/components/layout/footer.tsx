@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   { label: "Individual Therapy", href: "/services#individual" },
@@ -49,15 +50,14 @@ export function Footer() {
           }}>
             {/* Brand */}
             <div>
-              <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.25rem", textDecoration: "none" }}>
-                <div style={{
-                  width: 44, height: 44, backgroundColor: "var(--accent)", borderRadius: "50%",
-                  display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.3rem", flexShrink: 0,
-                }}>🧠</div>
-                <div>
-                  <div style={{ fontFamily: "Georgia, serif", fontSize: "1.3rem", fontWeight: 700, color: "#fff", lineHeight: 1 }}>Dunn</div>
-                  <div style={{ fontSize: "0.68rem", color: "var(--accent-light)", letterSpacing: "0.12em", textTransform: "uppercase" }}>Behavioral Health</div>
-                </div>
+              <Link href="/" style={{ display: "inline-block", marginBottom: "1.25rem" }}>
+                <Image
+                  src="/logo.png"
+                  alt="Dunn Behavioral Health"
+                  width={160}
+                  height={54}
+                  style={{ objectFit: "contain", height: 48, width: "auto", filter: "brightness(0) invert(1)" }}
+                />
               </Link>
               <p style={{ lineHeight: 1.8, fontSize: "0.9rem", marginBottom: "1.5rem" }}>
                 Compassionate, evidence-based behavioral health services for individuals, couples, and families in Kingsland, Georgia.
