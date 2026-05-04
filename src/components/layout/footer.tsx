@@ -52,11 +52,11 @@ export function Footer() {
             <div>
               <Link href="/" style={{ display: "inline-block", marginBottom: "1.25rem" }}>
                 <Image
-                  src="/logo.png"
+                  src="/logo-white.png"
                   alt="Dunn Behavioral Health"
                   width={160}
                   height={54}
-                  style={{ objectFit: "contain", height: 48, width: "auto", filter: "brightness(0) invert(1)" }}
+                  style={{ objectFit: "contain", height: 48, width: "auto" }}
                 />
               </Link>
               <p style={{ lineHeight: 1.8, fontSize: "0.9rem", marginBottom: "1.5rem" }}>
