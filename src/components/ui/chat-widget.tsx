@@ -315,7 +315,7 @@ export function ChatWidget() {
                         <button
                           key={opt}
                           onClick={() => handleOption(opt)}
-                          disabled={step !== m.options?.includes(opt) ? false : !["service", "session_type", "time"].includes(step)}
+                          disabled={!["service", "session_type", "time"].includes(step)}
                           style={{
                             padding: "0.4rem 0.85rem", borderRadius: 20,
                             border: "1.5px solid var(--primary, #1a4a5a)",
