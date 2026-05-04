@@ -38,25 +38,16 @@ export function Header() {
       }}
     >
       {/* Top bar */}
-      <div
-        style={{
-          backgroundColor: "var(--accent)",
-          padding: "0.4rem 0",
-          fontSize: "0.82rem",
-          color: "#fff",
-          textAlign: "center",
-          letterSpacing: "0.03em",
-        }}
-      >
-        <div className="container" style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
-          <span>📍 140 The Lakes Blvd Suite 218, Kingsland GA 31548</span>
+      <div style={{ backgroundColor: "var(--accent)", padding: "0.25rem 0", fontSize: "0.78rem", color: "#fff", letterSpacing: "0.02em" }}>
+        <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1.25rem", flexWrap: "wrap" }}>
+          <span className="topbar-address">📍 140 The Lakes Blvd Suite 218, Kingsland GA 31548</span>
           <span>📞 <a href="tel:+12522452590" style={{ color: "#fff", textDecoration: "none" }}>+1 (252) 245-2590</a></span>
           <span>✉️ <a href="mailto:info@dunnbehavioralhealth.us" style={{ color: "#fff", textDecoration: "none" }}>info@dunnbehavioralhealth.us</a></span>
         </div>
       </div>
 
       {/* Main nav */}
-      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem 1.5rem" }}>
+      <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.5rem 1.5rem" }}>
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none" }}>
           <Image
@@ -147,6 +138,7 @@ export function Header() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
+          .topbar-address { display: none !important; }
         }
       `}</style>
     </header>
