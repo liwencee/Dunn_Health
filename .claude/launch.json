@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--prefix", "digitowebs"],
       "port": 3000
+    },
+    {
+      "name": "dunnbehavioralhealth",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "dunnbehavioralhealth"],
+      "port": 3001
     }
   ]
 }
