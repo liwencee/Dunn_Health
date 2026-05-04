@@ -38,7 +38,18 @@
       "WebFetch(domain:www.framer.com)",
       "WebFetch(domain:www.wix.com)",
       "WebFetch(domain:kota.co.uk)",
-      "WebFetch(domain:superherocheesecake.com)"
+      "WebFetch(domain:superherocheesecake.com)",
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm list *)",
+      "Bash(cp -r .claude/skills/ui-ux-pro-max \"C:/Users/DELL/Desktop/code Claude/.claude/skills/ui-ux-pro-max\")",
+      "Bash(cp -r .claude/skills/ui-ux-pro-max ~/.claude/skills/ui-ux-pro-max)",
+      "Bash(mkdir -p \"C:/Users/DELL/Desktop/code Claude/.claude/skills\")",
+      "Bash(mkdir -p ~/.claude/skills)",
+      "Bash(npm i *)",
+      "WebFetch(domain:www.online-therapy.com)",
+      "WebFetch(domain:unsplash.com)"
     ]
   }
 }
