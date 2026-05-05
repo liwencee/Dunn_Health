@@ -4,12 +4,12 @@ const ADMIN_EMAIL = "info@dunnbehavioralhealth.us";
 
 function createTransporter() {
   return nodemailer.createTransport({
-    host: process.env.EMAIL_HOST || "smtp.hostinger.com",
-    port: Number(process.env.EMAIL_PORT) || 465,
-    secure: true,
+    host: "smtp.hostinger.com",
+    port: 465,
+    secure: true, // SSL
     auth: {
-      user: process.env.EMAIL_USER || ADMIN_EMAIL,
-      pass: process.env.EMAIL_PASS,
+      user: ADMIN_EMAIL,           // info@dunnbehavioralhealth.us
+      pass: process.env.EMAIL_PASS, // set this in Hostinger environment variables
     },
   });
 }
