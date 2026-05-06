@@ -5,9 +5,8 @@ const ADMIN_EMAIL = "info@dunnbehavioralhealth.us";
 function createTransporter() {
   return nodemailer.createTransport({
     host: process.env.EMAIL_HOST || "smtp.hostinger.com",
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: false,
-    requireTLS: true,
+    port: 465,
+    secure: true, // SSL on 465
     auth: {
       user: process.env.EMAIL_USER || ADMIN_EMAIL,
       pass: process.env.EMAIL_PASS,
