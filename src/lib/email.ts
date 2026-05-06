@@ -1,18 +1,9 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 const ADMIN_EMAIL = "info@dunnbehavioralhealth.us";
 
-function createTransporter() {
-  return nodemailer.createTransport({
-    host: process.env.EMAIL_HOST || "smtp.hostinger.com",
-    port: 465,
-    secure: true, // SSL on 465
-    auth: {
-      user: process.env.EMAIL_USER || ADMIN_EMAIL,
-      pass: process.env.EMAIL_PASS,
-    },
-    tls: { rejectUnauthorized: false },
-  });
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
 }
 
 export interface AppointmentData {
@@ -27,7 +18,7 @@ export interface AppointmentData {
 }
 
 export async function sendAppointmentEmail(data: AppointmentData) {
-  const transporter = createTransporter();
+  const resend = getResend();
 
   const adminHtml = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
@@ -75,9 +66,11 @@ export async function sendAppointmentEmail(data: AppointmentData) {
           <p style="margin:4px 0;color:#4a5568;font-size:0.9rem;"><strong>Date:</strong> ${data.preferredDate} at ${data.preferredTime}</p>
           <p style="margin:4px 0;color:#4a5568;font-size:0.9rem;"><strong>Type:</strong> ${data.sessionType}</p>
         </div>
-        <p style="color:#4a5568;line-height:1.7;">If you have any questions in the meantime, please don't hesitate to contact us:</p>
-        <p style="color:#4a5568;"><strong>📞</strong> <a href="tel:+12522452590" style="color:#1a4a5a;">+1 (252) 245-2590</a><br/>
-        <strong>✉️</strong> <a href="mailto:${ADMIN_EMAIL}" style="color:#1a4a5a;">${ADMIN_EMAIL}</a></p>
+        <p style="color:#4a5568;line-height:1.7;">If you have any questions, please contact us:</p>
+        <p style="color:#4a5568;">
+          <strong>📞</strong> <a href="tel:+12522452590" style="color:#1a4a5a;">+1 (252) 245-2590</a><br/>
+          <strong>✉️</strong> <a href="mailto:${ADMIN_EMAIL}" style="color:#1a4a5a;">${ADMIN_EMAIL}</a>
+        </p>
         <p style="color:#718096;font-size:0.85rem;margin-top:24px;border-top:1px solid #e2e8f0;padding-top:16px;">
           © ${new Date().getFullYear()} Dunn Behavioral Health · 140 The Lakes Blvd Suite 218, Kingsland GA 31548
         </p>
@@ -86,15 +79,15 @@ export async function sendAppointmentEmail(data: AppointmentData) {
   `;
 
   await Promise.all([
-    transporter.sendMail({
-      from: `"Dunn Behavioral Health" <${process.env.EMAIL_USER || ADMIN_EMAIL}>`,
+    resend.emails.send({
+      from: "Dunn Behavioral Health <info@dunnbehavioralhealth.us>",
       to: ADMIN_EMAIL,
+      reply_to: data.email,
       subject: `New Appointment Request — ${data.name} (${data.service})`,
       html: adminHtml,
-      replyTo: data.email,
     }),
-    transporter.sendMail({
-      from: `"Dunn Behavioral Health" <${process.env.EMAIL_USER || ADMIN_EMAIL}>`,
+    resend.emails.send({
+      from: "Dunn Behavioral Health <info@dunnbehavioralhealth.us>",
       to: data.email,
       subject: "We received your appointment request — Dunn Behavioral Health",
       html: clientHtml,
