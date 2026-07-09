@@ -26,5 +26,13 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "@types/nodemailer": "^6.4.0"
+  },
+  "mongodb": "^6.0.0"
+},
+const { MongoClient } = require('mongodb');
+
   }
 }
+
+
+
