@@ -38,8 +38,8 @@ export function AboutSection() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1592947945242-69312358628b?w=900&q=85"
-              alt="Therapy session at Dunn Behavioral Health"
+              src="/maggie-dunn.jpg"
+              alt="Maggie Dunn, LPC, NCC, CPCS"
               fill
               sizes="(max-width:768px) 100vw, 480px"
               style={{ objectFit: "cover" }}
