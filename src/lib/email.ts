@@ -1,9 +1,20 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 const ADMIN_EMAIL = "info@dunnbehavioralhealth.us";
 
-function getResend() {
-  return new Resend(process.env.RESEND_API_KEY);
+// Hostinger SMTP transporter.
+// Set EMAIL_USER / EMAIL_PASS in your environment (see .env.local.example).
+// EMAIL_USER should be a real mailbox created in hPanel (e.g. info@dunnbehavioralhealth.us).
+function createTransporter() {
+  return nodemailer.createTransport({
+    host: process.env.EMAIL_HOST || "smtp.hostinger.com",
+    port: Number(process.env.EMAIL_PORT) || 465,
+    secure: true, // SSL on port 465
+    auth: {
+      user: process.env.EMAIL_USER || ADMIN_EMAIL,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 }
 
 export interface AppointmentData {
@@ -18,7 +29,8 @@ export interface AppointmentData {
 }
 
 export async function sendAppointmentEmail(data: AppointmentData) {
-  const resend = getResend();
+  const transporter = createTransporter();
+  const fromAddress = process.env.EMAIL_USER || ADMIN_EMAIL;
 
   const adminHtml = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
@@ -79,15 +91,15 @@ export async function sendAppointmentEmail(data: AppointmentData) {
   `;
 
   await Promise.all([
-    resend.emails.send({
-      from: "Dunn Behavioral Health <info@dunnbehavioralhealth.us>",
+    transporter.sendMail({
+      from: `Dunn Behavioral Health <${fromAddress}>`,
       to: ADMIN_EMAIL,
-      reply_to: data.email,
+      replyTo: data.email,
       subject: `New Appointment Request — ${data.name} (${data.service})`,
       html: adminHtml,
     }),
-    resend.emails.send({
-      from: "Dunn Behavioral Health <info@dunnbehavioralhealth.us>",
+    transporter.sendMail({
+      from: `Dunn Behavioral Health <${fromAddress}>`,
       to: data.email,
       subject: "We received your appointment request — Dunn Behavioral Health",
       html: clientHtml,
