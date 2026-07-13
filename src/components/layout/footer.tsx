@@ -133,7 +133,9 @@ export function Footer() {
               <Link href="/privacy" className="footer-legal-link">Privacy Policy</Link>
               <Link href="/terms" className="footer-legal-link">Terms of Service</Link>
             </div>
-            <span style={{ color: "rgba(255,255,255,0.4)" }}>dunnbehavioralhealth.us</span>
+            <span style={{ color: "rgba(255,255,255,0.4)" }}>
+              Website by <a href="https://slatech.com.ng" target="_blank" rel="noopener noreferrer" className="footer-legal-link">SLATECH</a>
+            </span>
           </div>
         </div>
       </footer>
