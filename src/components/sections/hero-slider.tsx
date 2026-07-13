@@ -11,7 +11,7 @@ const slides = [
     image: "https://images.unsplash.com/photo-1620934125844-611fa7aaca69?w=1920&q=85",
     title: "Your Journey to\nHealing Starts Here",
     subtitle:
-      "Professional behavioral health services tailored to your unique needs in Kingsland, Georgia.",
+      "Professional behavioral health services in Kingsland, Georgia — and virtually across the state.",
     cta: { label: "Book Appointment", href: "/contact" },
     ctaSecondary: { label: "Our Services", href: "/services" },
   },
@@ -20,8 +20,8 @@ const slides = [
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1920&q=85",
     title: "Compassionate Care\nfor Mind & Soul",
     subtitle:
-      "Expert therapists dedicated to your mental wellness, recovery, and long-term flourishing.",
-    cta: { label: "Meet Our Team", href: "/about" },
+      "One-on-one, evidence-based care dedicated to your mental wellness, recovery, and long-term flourishing.",
+    cta: { label: "Meet Maggie", href: "/about" },
     ctaSecondary: { label: "Learn More", href: "/about" },
   },
   {
@@ -29,7 +29,7 @@ const slides = [
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=85",
     title: "Rebuilding Lives,\nRestoring Hope",
     subtitle:
-      "Evidence-based treatment for individuals, couples, and families — because everyone deserves to thrive.",
+      "Evidence-based treatment for individuals, teens, and families — because everyone deserves to thrive.",
     cta: { label: "Get Started Today", href: "/contact" },
     ctaSecondary: { label: "Our Approach", href: "/services" },
   },
@@ -96,7 +96,7 @@ export function HeroSlider() {
           {/* Dark gradient overlay */}
           <div style={{
             position: "absolute", inset: 0,
-            background: "linear-gradient(to right, rgba(13,43,56,0.82) 0%, rgba(13,43,56,0.55) 55%, rgba(13,43,56,0.2) 100%)",
+            background: "linear-gradient(to right, rgba(30,27,75,0.82) 0%, rgba(30,27,75,0.55) 55%, rgba(30,27,75,0.2) 100%)",
           }} />
         </motion.div>
       </AnimatePresence>
@@ -127,8 +127,8 @@ export function HeroSlider() {
               transition={{ delay: 0.35 }}
               style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                backgroundColor: "rgba(201,162,39,0.2)",
-                border: "1px solid rgba(201,162,39,0.5)",
+                backgroundColor: "rgba(147,51,234,0.2)",
+                border: "1px solid rgba(147,51,234,0.5)",
                 color: "var(--accent-light)",
                 padding: "0.35rem 1rem",
                 borderRadius: 50, fontSize: "0.78rem",
@@ -137,7 +137,7 @@ export function HeroSlider() {
               }}
             >
               <span style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "var(--accent)", display: "inline-block", animation: "pulse-ring 2s infinite" }} />
-              Behavioral Health Services · Kingsland, GA
+              Behavioral Health Services · Kingsland, GA &amp; Virtual Statewide
             </motion.div>
 
             {/* Heading */}
@@ -211,7 +211,7 @@ export function HeroSlider() {
           cursor: "pointer", fontSize: "1.2rem", backdropFilter: "blur(4px)",
           transition: "all 0.3s",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(201,162,39,0.5)")}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(147,51,234,0.5)")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)")}
       >
         ‹
@@ -227,7 +227,7 @@ export function HeroSlider() {
           cursor: "pointer", fontSize: "1.2rem", backdropFilter: "blur(4px)",
           transition: "all 0.3s",
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(201,162,39,0.5)")}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(147,51,234,0.5)")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)")}
       >
         ›

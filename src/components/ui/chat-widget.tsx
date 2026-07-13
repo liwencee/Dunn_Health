@@ -5,11 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const SERVICES = [
   "Individual Therapy",
-  "Couples Counseling",
   "Family Therapy",
-  "Teen Support",
+  "Teen Support (TF-CBT)",
   "Anxiety & Depression",
-  "Trauma & PTSD",
+  "Trauma & PTSD (TF-CBT)",
+  "Assessment & Treatment Planning",
+  "Clinical Supervision",
 ];
 
 const TIMES = ["8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"];
@@ -82,7 +83,7 @@ export function ChatWidget() {
       setTimeout(() => {
         setTyping(false);
         setMessages([
-          msg("bot", "👋 Welcome to Dunn Behavioral Health! I'm here to help you schedule an appointment or answer your questions."),
+          msg("bot", "👋 Welcome to Dunn Behavioral Health! I'm Maggie's virtual assistant, here to help you schedule an appointment or answer your questions."),
         ]);
         setTimeout(() => {
           addBotMsg("To get started, may I have your full name?");
@@ -196,14 +197,14 @@ export function ChatWidget() {
       if (res.ok) {
         setStep("done");
         addBotMsg(
-          `✅ Thank you, ${data.name.split(" ")[0]}! Your appointment request for **${data.service}** on ${data.preferredDate} at ${data.preferredTime} has been received. Our team will confirm shortly at ${data.email} or ${data.phone}. Have a wonderful day! 💙`
+          `✅ Thank you, ${data.name.split(" ")[0]}! Your appointment request for **${data.service}** on ${data.preferredDate} at ${data.preferredTime} has been received. Maggie will confirm shortly at ${data.email} or ${data.phone}. Have a wonderful day! 💙`
         );
       } else {
         throw new Error("API error");
       }
     } catch {
       setStep("error");
-      addBotMsg("Sorry, something went wrong submitting your request. Please call us at +1 (252) 245-2590 or email info@dunnbehavioralhealth.us.");
+      addBotMsg("Sorry, something went wrong submitting your request. Please call (912) 848-5335 or email info@dunnbehavioralhealth.us.");
     }
   };
 
@@ -242,7 +243,7 @@ export function ChatWidget() {
           onClick={() => setOpen((v) => !v)}
           style={{
             width: 58, height: 58, borderRadius: "50%",
-            background: "linear-gradient(135deg, var(--primary, #1a4a5a) 0%, var(--accent, #c9a84c) 100%)",
+            background: "linear-gradient(135deg, var(--primary, #2563EB) 0%, var(--accent, #9333EA) 100%)",
             border: "none", cursor: "pointer", boxShadow: "0 4px 20px rgba(0,0,0,0.25)",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: "1.6rem", color: "#fff",
@@ -273,7 +274,7 @@ export function ChatWidget() {
           >
             {/* Header */}
             <div style={{
-              background: "linear-gradient(135deg, var(--primary, #1a4a5a) 0%, #2d6a7f 100%)",
+              background: "linear-gradient(135deg, var(--primary, #2563EB) 0%, #3B82F6 100%)",
               padding: "1rem 1.25rem", display: "flex", alignItems: "center", gap: "0.75rem",
             }}>
               <div style={{
@@ -302,7 +303,7 @@ export function ChatWidget() {
                 <div key={m.id} style={{ display: "flex", flexDirection: "column", alignItems: m.role === "user" ? "flex-end" : "flex-start", gap: "0.5rem" }}>
                   <div style={{
                     maxWidth: "85%", padding: "0.65rem 1rem", borderRadius: m.role === "user" ? "18px 18px 4px 18px" : "18px 18px 18px 4px",
-                    backgroundColor: m.role === "user" ? "var(--primary, #1a4a5a)" : "#fff",
+                    backgroundColor: m.role === "user" ? "var(--primary, #2563EB)" : "#fff",
                     color: m.role === "user" ? "#fff" : "#2d3748",
                     fontSize: "0.88rem", lineHeight: 1.6,
                     boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
@@ -318,13 +319,13 @@ export function ChatWidget() {
                           disabled={!["service", "session_type", "time"].includes(step)}
                           style={{
                             padding: "0.4rem 0.85rem", borderRadius: 20,
-                            border: "1.5px solid var(--primary, #1a4a5a)",
-                            backgroundColor: "#fff", color: "var(--primary, #1a4a5a)",
+                            border: "1.5px solid var(--primary, #2563EB)",
+                            backgroundColor: "#fff", color: "var(--primary, #2563EB)",
                             fontSize: "0.8rem", fontWeight: 600, cursor: "pointer",
                             transition: "all 0.2s",
                           }}
-                          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--primary, #1a4a5a)"; e.currentTarget.style.color = "#fff"; }}
-                          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#fff"; e.currentTarget.style.color = "var(--primary, #1a4a5a)"; }}
+                          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "var(--primary, #2563EB)"; e.currentTarget.style.color = "#fff"; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#fff"; e.currentTarget.style.color = "var(--primary, #2563EB)"; }}
                         >
                           {opt}
                         </button>
@@ -379,7 +380,7 @@ export function ChatWidget() {
                     fontSize: "0.88rem", color: "#2d3748",
                     transition: "border-color 0.2s",
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = "var(--primary, #1a4a5a)")}
+                  onFocus={(e) => (e.target.style.borderColor = "var(--primary, #2563EB)")}
                   onBlur={(e) => (e.target.style.borderColor = "#e2e8f0")}
                 />
                 <button
@@ -387,7 +388,7 @@ export function ChatWidget() {
                   disabled={!input.trim()}
                   style={{
                     width: 40, height: 40, borderRadius: "50%", border: "none",
-                    background: input.trim() ? "var(--primary, #1a4a5a)" : "#e2e8f0",
+                    background: input.trim() ? "var(--primary, #2563EB)" : "#e2e8f0",
                     color: input.trim() ? "#fff" : "#a0aec0",
                     cursor: input.trim() ? "pointer" : "default",
                     display: "flex", alignItems: "center", justifyContent: "center",
@@ -403,7 +404,7 @@ export function ChatWidget() {
               <div style={{ padding: "0.75rem 1rem", borderTop: "1px solid #e2e8f0", backgroundColor: "#fff", textAlign: "center" }}>
                 <button onClick={restart} style={{
                   padding: "0.6rem 1.5rem", borderRadius: 24,
-                  background: "var(--primary, #1a4a5a)", color: "#fff",
+                  background: "var(--primary, #2563EB)", color: "#fff",
                   border: "none", cursor: "pointer", fontSize: "0.88rem", fontWeight: 600,
                 }}>
                   Start a new conversation

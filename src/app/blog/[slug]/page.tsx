@@ -86,74 +86,7 @@ Connecting with others who understand what you're going through can provide enor
 
 If anxiety is affecting your relationships, work performance, or quality of life — it's time to talk to a professional. You don't have to "tough it out." Early intervention leads to better outcomes.
 
-At Dunn Behavioral Health, our compassionate therapists specialize in anxiety treatment using evidence-based methods tailored to your unique situation. You deserve to live without the weight of constant worry.
-    `,
-  },
-
-  "couples-therapy-myths": {
-    title: "5 Myths About Couples Therapy Debunked",
-    category: "Relationships",
-    date: "April 5, 2025",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=85",
-    excerpt: "Couples counseling isn't just for relationships in crisis. Discover the truth about what therapy can do for your partnership.",
-    content: `
-## The Truth About Couples Therapy
-
-Couples therapy has a reputation problem. Despite being one of the most effective tools for building stronger relationships, many couples avoid it because of persistent myths and misconceptions. Let's set the record straight.
-
-## Myth #1: "Therapy Is Only for Couples on the Verge of Divorce"
-
-**The Truth:** Couples therapy is for any relationship at any stage. Many couples seek counseling proactively — to strengthen communication, navigate life transitions, or deepen intimacy before small issues become big ones.
-
-In fact, research shows that couples who seek therapy early, before problems become entrenched, experience the best outcomes. Think of it like routine maintenance on a car rather than emergency repairs after a breakdown.
-
-## Myth #2: "Going to Therapy Means We've Failed"
-
-**The Truth:** Seeking help is a sign of strength, not weakness. It takes courage to acknowledge that your relationship could benefit from professional support and to commit to doing the work.
-
-Some of the healthiest, most successful relationships include regular check-ins with a therapist — not because they're broken, but because the couple values their relationship enough to invest in it.
-
-## Myth #3: "The Therapist Will Take Sides"
-
-**The Truth:** A skilled couples therapist is not a judge or referee. Their role is to be a neutral facilitator who helps both partners feel heard, understood, and validated.
-
-At Dunn Behavioral Health, our therapists create a safe, balanced space where both voices matter equally. The goal is never to declare a winner — it's to help you both win together.
-
-## Myth #4: "Therapy Takes Years and Never Really Works"
-
-**The Truth:** Many couples experience meaningful improvement in a relatively short time. Evidence-based approaches like Emotionally Focused Therapy (EFT) and the Gottman Method have strong research backing.
-
-A 2020 meta-analysis found that couples therapy is effective for about 70% of couples, with many seeing significant improvements in just 8–12 sessions. While some couples benefit from longer-term work, it's not the default.
-
-## Myth #5: "We Just Have Communication Problems — We Don't Need Therapy"
-
-**The Truth:** Communication difficulties are among the most common reasons couples seek therapy — and they're absolutely worth addressing. What feels like a "simple" communication issue often masks deeper patterns of hurt, disconnection, or unmet needs.
-
-A therapist can help you identify those patterns, break negative cycles, and learn specific skills for expressing needs, listening actively, and resolving conflict constructively.
-
-## What Couples Therapy Actually Looks Like
-
-In a typical session at Dunn Behavioral Health, you and your partner will:
-
-- Share your perspectives in a safe, structured environment
-- Work with the therapist to identify recurring patterns and triggers
-- Learn evidence-based communication and conflict resolution skills
-- Develop a shared vision for your relationship
-- Build emotional intimacy and trust
-
-## Is Couples Therapy Right for You?
-
-If you and your partner are experiencing any of the following, therapy could help:
-
-- Frequent arguments that never get resolved
-- Feeling emotionally distant or disconnected
-- Trust issues or recovering from infidelity
-- Navigating major life changes (new baby, job loss, relocation)
-- Intimacy concerns
-- Parenting disagreements
-
-You don't have to wait for a crisis. The best time to strengthen your relationship is now.
+At Dunn Behavioral Health, I specialize in anxiety treatment using evidence-based methods tailored to your unique situation. You deserve to live without the weight of constant worry.
     `,
   },
 
@@ -163,7 +96,7 @@ You don't have to wait for a crisis. The best time to strengthen your relationsh
     date: "March 18, 2025",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=85",
-    excerpt: "Trauma recovery is not linear — but it is possible. Our therapists share the stages of healing and how to navigate them with support.",
+    excerpt: "Trauma recovery is not linear — but it is possible. Here are the stages of healing and how to navigate them with support.",
     content: `
 ## Understanding Trauma
 
@@ -242,7 +175,7 @@ While professional therapy is essential for trauma recovery, there are things yo
 
 Seeking help for trauma takes enormous courage. If you've been carrying your pain alone, know that you don't have to. Healing is possible. People recover from trauma every day — and they go on to build lives of meaning, connection, and joy.
 
-Our therapists at Dunn Behavioral Health are trained in trauma-informed care and will walk alongside you every step of the way.
+At Dunn Behavioral Health, I'm trained in trauma-focused care (TF-CBT) and will walk alongside you every step of the way.
     `,
   },
 
@@ -372,13 +305,13 @@ function renderContent(content: string) {
 
     if (line.startsWith("## ")) {
       elements.push(
-        <h2 key={i} style={{ fontFamily: "var(--font-cormorant, Georgia, serif)", fontSize: "clamp(1.5rem,3vw,2rem)", color: "var(--primary,#1a4a5a)", marginTop: "2.5rem", marginBottom: "1rem", fontWeight: 700 }}>
+        <h2 key={i} style={{ fontFamily: "var(--font-cormorant, Georgia, serif)", fontSize: "clamp(1.5rem,3vw,2rem)", color: "var(--primary,#2563EB)", marginTop: "2.5rem", marginBottom: "1rem", fontWeight: 700 }}>
           {line.replace("## ", "")}
         </h2>
       );
     } else if (line.startsWith("### ")) {
       elements.push(
-        <h3 key={i} style={{ fontSize: "1.15rem", color: "var(--primary,#1a4a5a)", marginTop: "1.75rem", marginBottom: "0.6rem", fontWeight: 700 }}>
+        <h3 key={i} style={{ fontSize: "1.15rem", color: "var(--primary,#2563EB)", marginTop: "1.75rem", marginBottom: "0.6rem", fontWeight: 700 }}>
           {line.replace("### ", "")}
         </h3>
       );
@@ -448,9 +381,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Hero */}
       <div style={{ position: "relative", height: "clamp(280px,40vh,420px)", marginTop: 0 }}>
         <Image src={post.image} alt={post.title} fill priority sizes="100vw" style={{ objectFit: "cover", objectPosition: "center top" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(13,43,56,0.6) 0%, rgba(13,43,56,0.75) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(30,27,75,0.6) 0%, rgba(30,27,75,0.75) 100%)" }} />
         <div className="container" style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end", paddingBottom: "2.5rem", paddingTop: "6rem" }}>
-          <span style={{ display: "inline-block", backgroundColor: "var(--accent,#c9a84c)", color: "#fff", padding: "0.25rem 0.9rem", borderRadius: 50, fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.06em", marginBottom: "1rem" }}>
+          <span style={{ display: "inline-block", backgroundColor: "var(--accent,#9333EA)", color: "#fff", padding: "0.25rem 0.9rem", borderRadius: 50, fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.06em", marginBottom: "1rem" }}>
             {post.category}
           </span>
           <h1 style={{ fontFamily: "var(--font-cormorant,Georgia,serif)", fontSize: "clamp(1.8rem,4vw,2.8rem)", color: "#fff", fontWeight: 700, lineHeight: 1.2, maxWidth: 720, marginBottom: "0.75rem" }}>
@@ -469,7 +402,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr min(680px,100%) 1fr", gap: 0 }}>
           <div style={{ gridColumn: 2 }}>
             {/* Excerpt */}
-            <p style={{ fontSize: "1.15rem", color: "var(--primary,#1a4a5a)", fontWeight: 600, lineHeight: 1.7, borderLeft: "4px solid var(--accent,#c9a84c)", paddingLeft: "1.25rem", marginBottom: "2.5rem" }}>
+            <p style={{ fontSize: "1.15rem", color: "var(--primary,#2563EB)", fontWeight: 600, lineHeight: 1.7, borderLeft: "4px solid var(--accent,#9333EA)", paddingLeft: "1.25rem", marginBottom: "2.5rem" }}>
               {post.excerpt}
             </p>
 
@@ -478,7 +411,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* CTA */}
             <div style={{ marginTop: "3rem", padding: "2rem", backgroundColor: "var(--bg-light,#f7f9fc)", borderRadius: 12, border: "1px solid var(--border,#e2e8f0)", textAlign: "center" }}>
-              <h3 style={{ fontFamily: "var(--font-cormorant,Georgia,serif)", fontSize: "1.6rem", color: "var(--primary,#1a4a5a)", marginBottom: "0.75rem" }}>
+              <h3 style={{ fontFamily: "var(--font-cormorant,Georgia,serif)", fontSize: "1.6rem", color: "var(--primary,#2563EB)", marginBottom: "0.75rem" }}>
                 Ready to Take the Next Step?
               </h3>
               <p style={{ color: "#718096", marginBottom: "1.5rem", lineHeight: 1.7 }}>
@@ -489,7 +422,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* Back */}
             <div style={{ marginTop: "2rem" }}>
-              <Link href="/blog" style={{ color: "var(--accent,#c9a84c)", fontWeight: 700, textDecoration: "none", fontSize: "0.9rem" }}>
+              <Link href="/blog" style={{ color: "var(--accent,#9333EA)", fontWeight: 700, textDecoration: "none", fontSize: "0.9rem" }}>
                 ← Back to Blog
               </Link>
             </div>
@@ -501,7 +434,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {otherPosts.length > 0 && (
         <section style={{ backgroundColor: "var(--bg-light,#f7f9fc)", padding: "4rem 0" }}>
           <div className="container">
-            <h2 style={{ fontFamily: "var(--font-cormorant,Georgia,serif)", fontSize: "2rem", color: "var(--primary,#1a4a5a)", marginBottom: "2rem", textAlign: "center" }}>
+            <h2 style={{ fontFamily: "var(--font-cormorant,Georgia,serif)", fontSize: "2rem", color: "var(--primary,#2563EB)", marginBottom: "2rem", textAlign: "center" }}>
               More Articles
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: "1.5rem" }}>
@@ -511,8 +444,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <Image src={p.image} alt={p.title} fill sizes="400px" style={{ objectFit: "cover" }} />
                   </div>
                   <div style={{ padding: "1.25rem" }}>
-                    <span style={{ fontSize: "0.75rem", color: "var(--accent,#c9a84c)", fontWeight: 700, letterSpacing: "0.06em" }}>{p.category}</span>
-                    <h3 style={{ fontFamily: "var(--font-cormorant,Georgia,serif)", fontSize: "1.2rem", color: "var(--primary,#1a4a5a)", marginTop: "0.5rem", lineHeight: 1.35 }}>{p.title}</h3>
+                    <span style={{ fontSize: "0.75rem", color: "var(--accent,#9333EA)", fontWeight: 700, letterSpacing: "0.06em" }}>{p.category}</span>
+                    <h3 style={{ fontFamily: "var(--font-cormorant,Georgia,serif)", fontSize: "1.2rem", color: "var(--primary,#2563EB)", marginTop: "0.5rem", lineHeight: 1.35 }}>{p.title}</h3>
                   </div>
                 </Link>
               ))}

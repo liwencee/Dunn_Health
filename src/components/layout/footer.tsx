@@ -5,11 +5,12 @@ import Image from "next/image";
 
 const services = [
   { label: "Individual Therapy", href: "/services#individual" },
-  { label: "Couples Counseling", href: "/services#couples" },
   { label: "Family Therapy", href: "/services#family" },
   { label: "Teen Support", href: "/services#teen" },
   { label: "Anxiety & Depression", href: "/services#anxiety" },
-  { label: "Trauma & PTSD", href: "/services#trauma" },
+  { label: "Trauma & PTSD (TF-CBT)", href: "/services#trauma" },
+  { label: "Assessment & Treatment Planning", href: "/services#assessment" },
+  { label: "Clinical Supervision", href: "/services#supervision" },
 ];
 
 const quickLinks = [
@@ -60,7 +61,7 @@ export function Footer() {
                 />
               </Link>
               <p style={{ lineHeight: 1.8, fontSize: "0.9rem", marginBottom: "1.5rem" }}>
-                Compassionate, evidence-based behavioral health services for individuals, couples, and families in Kingsland, Georgia.
+                Compassionate, evidence-based behavioral health services in Kingsland, Georgia and virtually across the state — plus self-pay telehealth in NC and border FL.
               </p>
               <div style={{ display: "flex", gap: "0.75rem" }}>
                 {socials.map((s) => (
@@ -105,9 +106,10 @@ export function Footer() {
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {[
                   { label: "Address", value: "140 The Lakes Blvd Suite 218\nKingsland, GA 31548 USA", href: null },
-                  { label: "Phone", value: "+1 (252) 245-2590", href: "tel:+12522452590" },
+                  { label: "Phone", value: "(912) 848-5335", href: "tel:+19128485335" },
+                  { label: "Fax", value: "(888) 414-8217", href: null },
                   { label: "Email", value: "info@dunnbehavioralhealth.us", href: "mailto:info@dunnbehavioralhealth.us" },
-                  { label: "Hours", value: "Mon–Fri: 8am – 6pm\nSaturday: 9am – 2pm", href: null },
+                  { label: "Hours", value: "Tue–Thu: 10am – 4pm\nMon & Fri: By appointment\nClosed Sat & Sun\nVirtual sessions available", href: null },
                 ].map((item) => (
                   <div key={item.label}>
                     <div style={{ color: "var(--accent-light)", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "0.3rem" }}>{item.label}</div>

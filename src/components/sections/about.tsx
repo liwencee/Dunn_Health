@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const highlights = [
-  { icon: "✓", text: "Licensed & Board-Certified Therapists" },
+  { icon: "✓", text: "Licensed Professional Counselor (LPC, NCC, CPCS)" },
   { icon: "✓", text: "Culturally Competent & Affirming Care" },
   { icon: "✓", text: "Telehealth & In-Person Sessions Available" },
-  { icon: "✓", text: "Most Insurance Plans Accepted" },
+  { icon: "✓", text: "CareSource GA, Amerigroup GA & Self-Pay Accepted" },
 ];
 
 export function AboutSection() {
@@ -61,13 +61,13 @@ export function AboutSection() {
               borderRadius: 16,
               padding: "1.5rem",
               textAlign: "center",
-              boxShadow: "0 10px 40px rgba(201,162,39,0.35)",
+              boxShadow: "0 10px 40px rgba(147,51,234,0.35)",
               minWidth: 140,
             }}
           >
-            <div style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "2.5rem", fontWeight: 700, lineHeight: 1 }}>10+</div>
-            <div style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "0.25rem" }}>
-              Years of<br />Trusted Care
+            <div style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.6rem", fontWeight: 700, lineHeight: 1.2 }}>LPC · NCC<br />CPCS</div>
+            <div style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "0.4rem" }}>
+              Licensed &amp;<br />Supervision-Qualified
             </div>
           </motion.div>
 
@@ -92,15 +92,15 @@ export function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="section-label">About Us</span>
+          <span className="section-label">About Me</span>
           <h2 className="section-title">
             Dedicated to Your <span>Mental Wellness</span>
           </h2>
           <p style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.25rem", fontSize: "1.02rem" }}>
-            Dunn Behavioral Health is a premier mental health practice located in Kingsland, Georgia, serving Camden County and surrounding communities. We believe that mental health is the foundation of a fulfilling life.
+            Dunn Behavioral Health is an individual private practice based in Kingsland, Georgia, serving Camden County and the surrounding Southeast Georgia community — plus virtual clients across the whole state.
           </p>
           <p style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "2rem", fontSize: "1.02rem" }}>
-            Our team of compassionate, licensed therapists is committed to providing personalized, evidence-based care in a safe and affirming environment — helping you overcome challenges, heal from past trauma, and build the life you deserve.
+            As a solo practitioner, I&apos;m committed to providing personalized, evidence-based care in a safe and affirming environment — helping you overcome challenges, heal from past trauma, and build the life you deserve.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "2.5rem" }}>
@@ -120,7 +120,7 @@ export function AboutSection() {
           </div>
 
           <Link href="/about" className="btn-primary">
-            Meet Our Team
+            Meet Maggie
           </Link>
         </motion.div>
       </div>

@@ -22,7 +22,7 @@ export async function sendAppointmentEmail(data: AppointmentData) {
 
   const adminHtml = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
-      <div style="background:#1a4a5a;padding:24px 28px;">
+      <div style="background:#2563EB;padding:24px 28px;">
         <h2 style="color:#fff;margin:0;font-size:1.3rem;">New Appointment Request</h2>
         <p style="color:rgba(255,255,255,0.75);margin:4px 0 0;font-size:0.9rem;">Dunn Behavioral Health</p>
       </div>
@@ -53,23 +53,23 @@ export async function sendAppointmentEmail(data: AppointmentData) {
 
   const clientHtml = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
-      <div style="background:#1a4a5a;padding:24px 28px;">
+      <div style="background:#2563EB;padding:24px 28px;">
         <h2 style="color:#fff;margin:0;font-size:1.3rem;">Appointment Request Received</h2>
         <p style="color:rgba(255,255,255,0.75);margin:4px 0 0;font-size:0.9rem;">Dunn Behavioral Health</p>
       </div>
       <div style="padding:28px;">
         <p style="color:#2d3748;font-size:1rem;">Hi <strong>${data.name.split(" ")[0]}</strong>,</p>
-        <p style="color:#4a5568;line-height:1.7;">Thank you for reaching out to Dunn Behavioral Health. We've received your appointment request and our team will be in touch shortly to confirm your booking.</p>
-        <div style="background:#f7f9fc;border-left:4px solid #c9a84c;padding:16px 20px;border-radius:0 6px 6px 0;margin:20px 0;">
-          <p style="margin:0 0 8px;font-weight:700;color:#1a4a5a;">Your Request Summary</p>
+        <p style="color:#4a5568;line-height:1.7;">Thank you for reaching out to Dunn Behavioral Health. I've received your appointment request and will be in touch shortly to confirm your booking.</p>
+        <div style="background:#f7f9fc;border-left:4px solid #9333EA;padding:16px 20px;border-radius:0 6px 6px 0;margin:20px 0;">
+          <p style="margin:0 0 8px;font-weight:700;color:#2563EB;">Your Request Summary</p>
           <p style="margin:4px 0;color:#4a5568;font-size:0.9rem;"><strong>Service:</strong> ${data.service}</p>
           <p style="margin:4px 0;color:#4a5568;font-size:0.9rem;"><strong>Date:</strong> ${data.preferredDate} at ${data.preferredTime}</p>
           <p style="margin:4px 0;color:#4a5568;font-size:0.9rem;"><strong>Type:</strong> ${data.sessionType}</p>
         </div>
         <p style="color:#4a5568;line-height:1.7;">If you have any questions, please contact us:</p>
         <p style="color:#4a5568;">
-          <strong>📞</strong> <a href="tel:+12522452590" style="color:#1a4a5a;">+1 (252) 245-2590</a><br/>
-          <strong>✉️</strong> <a href="mailto:${ADMIN_EMAIL}" style="color:#1a4a5a;">${ADMIN_EMAIL}</a>
+          <strong>📞</strong> <a href="tel:+19128485335" style="color:#2563EB;">(912) 848-5335</a><br/>
+          <strong>✉️</strong> <a href="mailto:${ADMIN_EMAIL}" style="color:#2563EB;">${ADMIN_EMAIL}</a>
         </p>
         <p style="color:#718096;font-size:0.85rem;margin-top:24px;border-top:1px solid #e2e8f0;padding-top:16px;">
           © ${new Date().getFullYear()} Dunn Behavioral Health · 140 The Lakes Blvd Suite 218, Kingsland GA 31548

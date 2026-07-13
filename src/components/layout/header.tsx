@@ -41,8 +41,9 @@ export function Header() {
       <div style={{ backgroundColor: "var(--accent)", padding: "0.25rem 0", fontSize: "0.78rem", color: "#fff", letterSpacing: "0.02em" }}>
         <div className="container" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "1.25rem", flexWrap: "wrap" }}>
           <span className="topbar-address">📍 140 The Lakes Blvd Suite 218, Kingsland GA 31548</span>
-          <span>📞 <a href="tel:+12522452590" style={{ color: "#fff", textDecoration: "none" }}>+1 (252) 245-2590</a></span>
+          <span>📞 <a href="tel:+19128485335" style={{ color: "#fff", textDecoration: "none" }}>(912) 848-5335</a></span>
           <span>✉️ <a href="mailto:info@dunnbehavioralhealth.us" style={{ color: "#fff", textDecoration: "none" }}>info@dunnbehavioralhealth.us</a></span>
+          <span className="topbar-address">💻 Virtual sessions available across GA</span>
         </div>
       </div>
 
@@ -67,7 +68,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               style={{
-                color: "var(--primary, #1a4a5a)",
+                color: "var(--primary, #2563EB)",
                 textDecoration: "none",
                 fontSize: "0.9rem",
                 fontWeight: 600,
@@ -75,8 +76,8 @@ export function Header() {
                 transition: "color 0.2s",
                 textTransform: "uppercase",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent, #c9a84c)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--primary, #1a4a5a)")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent, #9333EA)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--primary, #2563EB)")}
             >
               {link.label}
             </Link>
@@ -97,7 +98,7 @@ export function Header() {
           aria-label="Toggle menu"
         >
           {[0, 1, 2].map((i) => (
-            <span key={i} style={{ display: "block", width: 26, height: 2.5, backgroundColor: "var(--primary, #1a4a5a)", borderRadius: 2, transition: "all 0.3s" }} />
+            <span key={i} style={{ display: "block", width: 26, height: 2.5, backgroundColor: "var(--primary, #2563EB)", borderRadius: 2, transition: "all 0.3s" }} />
           ))}
         </button>
       </div>

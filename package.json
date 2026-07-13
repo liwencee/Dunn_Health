@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "framer-motion": "^12.0.0",
+    "mongodb": "^6.0.0",
     "mongoose": "^8.0.0",
     "next": "^15.3.0",
     "react": "^19.0.0",
@@ -26,8 +27,6 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "@types/nodemailer": "^6.4.0"
-  },
-  "mongodb": "^6.0.0"
   }
 }
 

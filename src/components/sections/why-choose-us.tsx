@@ -6,32 +6,32 @@ const reasons = [
   {
     icon: "🎓",
     title: "Evidence-Based Treatment",
-    desc: "All our therapists use scientifically validated methods including CBT, DBT, EMDR, and mindfulness-based approaches.",
+    desc: "I use scientifically validated approaches including CBT, TF-CBT, Solution-Focused, and Person-Centered therapy, matched to your needs.",
   },
   {
     icon: "🔒",
     title: "Confidential & Safe",
-    desc: "Your privacy is our priority. All sessions are completely confidential and conducted in a judgment-free environment.",
+    desc: "Your privacy is my priority. All sessions are completely confidential and conducted in a judgment-free environment.",
   },
   {
     icon: "💻",
     title: "Telehealth Available",
-    desc: "Access therapy from the comfort of your home through secure video sessions — flexible scheduling to fit your life.",
+    desc: "Access therapy from the comfort of your home through secure video sessions — with virtual coverage across all of Georgia.",
   },
   {
     icon: "🏥",
     title: "Insurance Accepted",
-    desc: "We work with most major insurance providers to make quality mental health care accessible and affordable for everyone.",
+    desc: "I accept CareSource GA (including Tricare), Amerigroup GA, and Self-Pay — with more plans being added as I get in-network.",
   },
   {
-    icon: "🌍",
-    title: "Culturally Affirming",
-    desc: "Our diverse team provides culturally competent care that honors your identity, background, and lived experiences.",
+    icon: "🤝",
+    title: "Personalized, One-on-One Care",
+    desc: "As a solo private practice, you work with me directly every session — no rotating providers, no hand-offs.",
   },
   {
-    icon: "⚡",
-    title: "Quick Appointments",
-    desc: "New clients typically seen within 48–72 hours. We understand that when you're ready to heal, waiting isn't an option.",
+    icon: "🎯",
+    title: "Licensed & Supervision-Qualified",
+    desc: "LPC, NCC, and CPCS credentialed — I also provide clinical supervision for those pursuing licensure in Georgia.",
   },
 ];
 
@@ -52,7 +52,7 @@ export function WhyChooseUs() {
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <span style={{
             display: "inline-block",
-            backgroundColor: "rgba(201,162,39,0.15)", color: "var(--accent-light)",
+            backgroundColor: "rgba(147,51,234,0.15)", color: "var(--accent-light)",
             fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.15em",
             textTransform: "uppercase", padding: "0.35rem 1rem", borderRadius: 50, marginBottom: "1rem",
           }}>

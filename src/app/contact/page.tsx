@@ -10,8 +10,9 @@ export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const services = [
-    "Individual Therapy", "Couples Counseling", "Family Therapy",
-    "Teen & Adolescent Support", "Anxiety & Depression Treatment", "Trauma & PTSD Recovery",
+    "Individual Therapy", "Family Therapy",
+    "Teen & Adolescent Support (TF-CBT, ages 5-18)", "Anxiety & Depression Treatment",
+    "Trauma & PTSD Recovery (TF-CBT)", "Assessment & Treatment Planning", "Clinical Supervision",
   ];
 
   async function handleSubmit(e: React.FormEvent) {
@@ -43,12 +44,12 @@ export default function ContactPage() {
       {/* Hero */}
       <section style={{ paddingTop: "10rem", paddingBottom: "5rem", background: "linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%)", textAlign: "center" }}>
         <div className="container">
-          <span className="section-label" style={{ backgroundColor: "rgba(201,162,39,0.2)", color: "var(--accent-light)" }}>Get In Touch</span>
+          <span className="section-label" style={{ backgroundColor: "rgba(147,51,234,0.2)", color: "var(--accent-light)" }}>Get In Touch</span>
           <h1 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(2.5rem, 6vw, 4rem)", color: "#fff", marginTop: "0.5rem", marginBottom: "1rem" }}>
             Book Your Appointment
           </h1>
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.1rem", maxWidth: 580, margin: "0 auto" }}>
-            Fill out the form below and our team will reach out within 24 hours to confirm your appointment.
+            Fill out the form below and I&apos;ll reach out within 24 hours to confirm your appointment.
           </p>
         </div>
       </section>
@@ -69,7 +70,7 @@ export default function ContactPage() {
                   Request Received!
                 </h3>
                 <p style={{ color: "var(--text-muted)", lineHeight: 1.7 }}>
-                  Thank you! Our team will contact you within 24 hours to confirm your appointment details.
+                  Thank you! I&apos;ll contact you within 24 hours to confirm your appointment details.
                 </p>
               </div>
             ) : (
@@ -139,10 +140,16 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label style={{ display: "block", fontWeight: 600, fontSize: "0.87rem", color: "var(--text-dark)", marginBottom: "0.4rem" }}>Insurance Provider (if applicable)</label>
-                  <input style={inputStyle} value={form.insurance} onChange={(e) => setForm({ ...form, insurance: e.target.value })} placeholder="e.g. BlueCross, Aetna, Medicaid..."
+                  <label style={{ display: "block", fontWeight: 600, fontSize: "0.87rem", color: "var(--text-dark)", marginBottom: "0.4rem" }}>Insurance / Payment</label>
+                  <select style={{ ...inputStyle, cursor: "pointer" }} value={form.insurance} onChange={(e) => setForm({ ...form, insurance: e.target.value })}
                     onFocus={(e) => (e.target.style.borderColor = "var(--primary)")}
-                    onBlur={(e) => (e.target.style.borderColor = "var(--border)")} />
+                    onBlur={(e) => (e.target.style.borderColor = "var(--border)")}>
+                    <option value="">Select an option...</option>
+                    <option value="CareSource GA">CareSource GA (includes Tricare)</option>
+                    <option value="Amerigroup GA">Amerigroup GA</option>
+                    <option value="Self-Pay">Self-Pay</option>
+                    <option value="Other / Not Sure">Other / Not sure — I&apos;ll help you check</option>
+                  </select>
                 </div>
 
                 <div>
@@ -171,9 +178,11 @@ export default function ContactPage() {
               <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "2rem", color: "var(--primary)", marginBottom: "1.5rem" }}>Visit Us</h3>
               {[
                 { icon: "📍", label: "Address", value: "140 The Lakes Blvd Suite 218\nKingsland, GA 31548 USA", href: "https://maps.google.com/?q=140+The+Lakes+Blvd+Suite+218+Kingsland+GA" },
-                { icon: "📞", label: "Phone", value: "(912) 999-0000", href: "tel:+19129990000" },
+                { icon: "📞", label: "Phone", value: "(912) 848-5335", href: "tel:+19128485335" },
+                { icon: "📠", label: "Fax", value: "(888) 414-8217", href: null },
                 { icon: "✉️", label: "Email", value: "info@dunnbehavioralhealth.us", href: "mailto:info@dunnbehavioralhealth.us" },
-                { icon: "🕐", label: "Hours", value: "Mon–Fri: 8am–6pm\nSaturday: 9am–2pm", href: null },
+                { icon: "🕐", label: "Hours", value: "Tue–Thu: 10am–4pm\nMon & Fri: By appointment only\nClosed Saturday & Sunday\nVirtual sessions available", href: null },
+                { icon: "🩺", label: "Insurance", value: "CareSource GA (incl. Tricare), Amerigroup GA, Self-Pay\nMore plans added as I become in-network — just ask", href: null },
               ].map((item, i) => (
                 <div key={i} style={{ display: "flex", gap: "1rem", alignItems: "flex-start", padding: "1.25rem", borderBottom: "1px solid var(--border)" }}>
                   <span style={{ fontSize: "1.4rem" }}>{item.icon}</span>

@@ -11,12 +11,6 @@ const services = [
     href: "/services#individual",
   },
   {
-    icon: "💑",
-    title: "Couples Counseling",
-    desc: "Strengthen your relationship through improved communication, conflict resolution, and rebuilding emotional connection with your partner.",
-    href: "/services#couples",
-  },
-  {
     icon: "👨‍👩‍👧",
     title: "Family Therapy",
     desc: "Heal and strengthen family bonds by addressing patterns, improving dynamics, and fostering a healthier home environment.",
@@ -25,7 +19,7 @@ const services = [
   {
     icon: "🌱",
     title: "Teen & Adolescent Support",
-    desc: "Specialized support for teens navigating anxiety, depression, peer pressure, and the challenges of growing up.",
+    desc: "TF-CBT support for ages 5–18 navigating anxiety, depression, trauma, peer pressure, and the challenges of growing up.",
     href: "/services#teen",
   },
   {
@@ -37,8 +31,14 @@ const services = [
   {
     icon: "🕊️",
     title: "Trauma & PTSD Recovery",
-    desc: "Compassionate, trauma-informed care to help survivors process difficult experiences and build resilience for the future.",
+    desc: "Compassionate, trauma-focused care (TF-CBT) to help survivors process difficult experiences and build resilience for the future.",
     href: "/services#trauma",
+  },
+  {
+    icon: "📋",
+    title: "Assessment & Treatment Planning",
+    desc: "Comprehensive clinical assessments and customized, individualized care plans to guide your treatment from day one.",
+    href: "/services#assessment",
   },
 ];
 
@@ -59,7 +59,7 @@ export function ServicesSection() {
 
         <style>{`
           .service-card { background:#fff; border-radius:12px; padding:2.25rem; height:100%; border:1px solid var(--border); transition:all 0.35s ease; cursor:pointer; position:relative; overflow:hidden; }
-          .service-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(30,81,101,0.14); border-color:var(--accent); }
+          .service-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(37,99,235,0.14); border-color:var(--accent); }
         `}</style>
 
         {/* Cards */}
@@ -94,7 +94,7 @@ export function ServicesSection() {
                   <div
                     style={{
                       width: 60, height: 60,
-                      backgroundColor: "rgba(201,162,39,0.1)",
+                      backgroundColor: "rgba(147,51,234,0.1)",
                       borderRadius: 12,
                       display: "flex", alignItems: "center", justifyContent: "center",
                       fontSize: "1.8rem",

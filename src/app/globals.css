@@ -8,19 +8,22 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 a { text-decoration: none; color: inherit; }
 
 :root {
-  --primary: #1E5165;
-  --primary-dark: #163B4A;
-  --primary-light: #2A7A9A;
-  --accent: #C9A227;
-  --accent-dark: #A87C10;
-  --accent-light: #E4C050;
-  --bg-light: #F0F7FA;
-  --bg-cream: #FAFAF7;
-  --bg-dark: #0D2B38;
-  --text-dark: #1A2B35;
-  --text-muted: #5A7A8A;
+  --primary: #2563EB;
+  --primary-dark: #1E3A8A;
+  --primary-light: #3B82F6;
+  --accent: #9333EA;
+  --accent-dark: #6B21A8;
+  --accent-light: #D8B4FE;
+  --pink: #EC4899;
+  --pink-dark: #BE185D;
+  --pink-light: #F9A8D4;
+  --bg-light: #EEF2FF;
+  --bg-cream: #FDF2F8;
+  --bg-dark: #1E1B4B;
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
   --white: #FFFFFF;
-  --border: #D0E4EC;
+  --border: #E0E7FF;
 }
 
 * {
@@ -64,7 +67,7 @@ h1, h2, h3, h4, h5 {
 .btn-primary:hover {
   background-color: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(201, 162, 39, 0.35);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.35);
 }
 
 .btn-outline {
@@ -90,7 +93,7 @@ h1, h2, h3, h4, h5 {
 
 .section-label {
   display: inline-block;
-  background-color: rgba(201, 162, 39, 0.12);
+  background-color: rgba(147, 51, 234, 0.12);
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 700;
@@ -130,12 +133,12 @@ h1, h2, h3, h4, h5 {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(30,81,101,0.06);
+  box-shadow: 0 4px 20px rgba(37,99,235,0.06);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .blog-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(30,81,101,0.12);
+  box-shadow: 0 12px 40px rgba(37,99,235,0.12);
 }
 
 .nav-link:hover { color: var(--accent-light) !important; }
@@ -148,7 +151,7 @@ h1, h2, h3, h4, h5 {
 }
 
 @keyframes pulse-ring {
-  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(201,162,39,0.6); }
-  70%  { transform: scale(1);    box-shadow: 0 0 0 12px rgba(201,162,39,0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(201,162,39,0); }
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(147,51,234,0.6); }
+  70%  { transform: scale(1);    box-shadow: 0 0 0 12px rgba(147,51,234,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(147,51,234,0); }
 }

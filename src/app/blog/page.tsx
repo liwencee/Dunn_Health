@@ -18,18 +18,9 @@ const posts = [
     readTime: "5 min read",
   },
   {
-    slug: "couples-therapy-myths",
-    title: "5 Myths About Couples Therapy Debunked",
-    excerpt: "Couples counseling isn't just for relationships in crisis. Discover the truth about what therapy can do for your partnership.",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
-    category: "Relationships",
-    date: "April 5, 2025",
-    readTime: "4 min read",
-  },
-  {
     slug: "trauma-healing-steps",
     title: "Healing From Trauma: A Step-by-Step Guide",
-    excerpt: "Trauma recovery is not linear — but it is possible. Our therapists share the stages of healing and how to navigate them with support.",
+    excerpt: "Trauma recovery is not linear — but it is possible. Here are the stages of healing and how to navigate them with support.",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
     category: "Trauma",
     date: "March 18, 2025",
@@ -52,7 +43,7 @@ export default function BlogPage() {
       {/* Hero */}
       <section style={{ paddingTop: "10rem", paddingBottom: "5rem", background: "linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%)", textAlign: "center" }}>
         <div className="container">
-          <span className="section-label" style={{ backgroundColor: "rgba(201,162,39,0.2)", color: "var(--accent-light)" }}>Resources</span>
+          <span className="section-label" style={{ backgroundColor: "rgba(147,51,234,0.2)", color: "var(--accent-light)" }}>Resources</span>
           <h1 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(2.5rem, 6vw, 4rem)", color: "#fff", marginTop: "0.5rem", marginBottom: "1rem" }}>
             Mental Health Blog
           </h1>

@@ -13,8 +13,14 @@ const info = [
   {
     icon: "📞",
     label: "Phone",
-    value: "+1 (252) 245-2590",
-    link: "tel:+12522452590",
+    value: "(912) 848-5335",
+    link: "tel:+19128485335",
+  },
+  {
+    icon: "📠",
+    label: "Fax",
+    value: "(888) 414-8217",
+    link: null,
   },
   {
     icon: "✉️",
@@ -25,7 +31,7 @@ const info = [
   {
     icon: "🕐",
     label: "Office Hours",
-    value: "Mon–Fri: 8am – 6pm\nSat: 9am – 2pm",
+    value: "Tue–Thu: 10am – 4pm\nMon & Fri: By appointment\nClosed Sat & Sun\nVirtual sessions available",
     link: null,
   },
 ];
@@ -40,7 +46,7 @@ export function ContactPreview() {
             We&apos;re Here to <span>Help You</span>
           </h2>
           <p className="section-subtitle" style={{ margin: "0 auto" }}>
-            Reach out today to schedule your first appointment or ask any questions. Our friendly team responds promptly.
+            Reach out today to schedule your first appointment or ask any questions. I respond promptly.
           </p>
         </div>
 

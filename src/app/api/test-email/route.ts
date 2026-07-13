@@ -8,7 +8,7 @@ export async function GET() {
     await sendAppointmentEmail({
       name: "Test Client",
       email: "info@dunnbehavioralhealth.us",
-      phone: "+1 (252) 245-2590",
+      phone: "(912) 848-5335",
       service: "Individual Therapy",
       sessionType: "in-person",
       preferredDate: "05/20/2026",
