@@ -8,7 +8,7 @@ import Link from "next/link";
 const slides = [
   {
     id: 0,
-    image: "https://images.unsplash.com/photo-1620934125844-611fa7aaca69?w=1920&q=85",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1920&q=85",
     title: "Your Journey to\nHealing Starts Here",
     subtitle:
       "Professional behavioral health services in Kingsland, Georgia — and virtually across the state.",
@@ -17,21 +17,12 @@ const slides = [
   },
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1920&q=85",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=85",
     title: "Compassionate Care\nfor Mind & Soul",
     subtitle:
       "One-on-one, evidence-based care dedicated to your mental wellness, recovery, and long-term flourishing.",
     cta: { label: "Meet Maggie", href: "/about" },
     ctaSecondary: { label: "Learn More", href: "/about" },
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=85",
-    title: "Rebuilding Lives,\nRestoring Hope",
-    subtitle:
-      "Evidence-based treatment for individuals, teens, and families — because everyone deserves to thrive.",
-    cta: { label: "Get Started Today", href: "/contact" },
-    ctaSecondary: { label: "Our Approach", href: "/services" },
   },
 ];
 

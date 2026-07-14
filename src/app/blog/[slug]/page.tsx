@@ -17,7 +17,7 @@ const posts: Record<string, {
     category: "Anxiety",
     date: "April 20, 2025",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1620934125844-611fa7aaca69?w=1200&q=85",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=85",
     excerpt: "Anxiety disorders affect millions of people. Learn what distinguishes normal worry from clinical anxiety — and what you can do about it.",
     content: `
 ## What Is Anxiety?

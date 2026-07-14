@@ -12,7 +12,7 @@ const posts = [
     slug: "understanding-anxiety",
     title: "Understanding Anxiety: Causes, Symptoms & Treatment Options",
     excerpt: "Anxiety disorders affect millions of people. Learn what distinguishes normal worry from clinical anxiety — and what you can do about it.",
-    image: "https://images.unsplash.com/photo-1620934125844-611fa7aaca69?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
     category: "Anxiety",
     date: "April 20, 2025",
     readTime: "5 min read",
