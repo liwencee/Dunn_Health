@@ -108,3 +108,101 @@ export async function sendAppointmentEmail(data: AppointmentData) {
     }),
   ]);
 }
+
+// ---------------------------------------------------------------------------
+// New-client intake form
+// ---------------------------------------------------------------------------
+
+export interface IntakeSection {
+  heading: string;
+  items: { label: string; value: string }[];
+}
+
+export interface IntakeData {
+  name: string;
+  email: string;
+  phone: string;
+  sections: IntakeSection[];
+}
+
+export async function sendIntakeEmail(data: IntakeData) {
+  const transporter = createTransporter();
+  const fromAddress = process.env.EMAIL_USER || ADMIN_EMAIL;
+
+  const esc = (s: string) =>
+    String(s ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
+  const sectionsHtml = data.sections
+    .map(
+      (section) => `
+        <h3 style="margin:28px 0 8px;color:#2563EB;font-size:1.05rem;border-bottom:2px solid #E0E7FF;padding-bottom:6px;">${esc(section.heading)}</h3>
+        <table style="width:100%;border-collapse:collapse;">
+          ${section.items
+            .map(
+              (it) => `
+            <tr>
+              <td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:#718096;font-size:0.82rem;width:42%;font-weight:600;vertical-align:top;">${esc(it.label)}</td>
+              <td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:#2d3748;font-size:0.9rem;white-space:pre-line;">${esc(it.value) || "&mdash;"}</td>
+            </tr>`
+            )
+            .join("")}
+        </table>`
+    )
+    .join("");
+
+  const adminHtml = `
+    <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
+      <div style="background:#2563EB;padding:24px 28px;">
+        <h2 style="color:#fff;margin:0;font-size:1.3rem;">New Client Intake Form</h2>
+        <p style="color:rgba(255,255,255,0.75);margin:4px 0 0;font-size:0.9rem;">Dunn Behavioral Health</p>
+      </div>
+      <div style="padding:28px;">
+        <p style="color:#4a5568;font-size:0.9rem;margin:0 0 8px;">Submitted by <strong>${esc(data.name)}</strong> — reply to this email to reach them at <a href="mailto:${esc(data.email)}" style="color:#2563EB;">${esc(data.email)}</a>${data.phone ? ` or call ${esc(data.phone)}` : ""}.</p>
+        ${sectionsHtml}
+        <p style="color:#a0aec0;font-size:0.78rem;margin-top:24px;border-top:1px solid #e2e8f0;padding-top:12px;">
+          This message contains confidential client information. Handle and store it securely.
+        </p>
+      </div>
+    </div>
+  `;
+
+  const clientHtml = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
+      <div style="background:#2563EB;padding:24px 28px;">
+        <h2 style="color:#fff;margin:0;font-size:1.3rem;">Intake Form Received</h2>
+        <p style="color:rgba(255,255,255,0.75);margin:4px 0 0;font-size:0.9rem;">Dunn Behavioral Health</p>
+      </div>
+      <div style="padding:28px;">
+        <p style="color:#2d3748;font-size:1rem;">Hi <strong>${esc(data.name.split(" ")[0])}</strong>,</p>
+        <p style="color:#4a5568;line-height:1.7;">Thank you for completing your intake form. I've received your information and will be in touch shortly to schedule your first appointment.</p>
+        <p style="color:#4a5568;line-height:1.7;">If you have any questions, please contact us:</p>
+        <p style="color:#4a5568;">
+          <strong>📞</strong> <a href="tel:+19128485335" style="color:#2563EB;">(912) 848-5335</a><br/>
+          <strong>✉️</strong> <a href="mailto:${ADMIN_EMAIL}" style="color:#2563EB;">${ADMIN_EMAIL}</a>
+        </p>
+        <p style="color:#718096;font-size:0.85rem;margin-top:24px;border-top:1px solid #e2e8f0;padding-top:16px;">
+          © ${new Date().getFullYear()} Dunn Behavioral Health · 140 The Lakes Blvd Suite 218, Kingsland GA 31548
+        </p>
+      </div>
+    </div>
+  `;
+
+  await Promise.all([
+    transporter.sendMail({
+      from: `Dunn Behavioral Health <${fromAddress}>`,
+      to: ADMIN_EMAIL,
+      replyTo: data.email,
+      subject: `New Client Intake — ${data.name}`,
+      html: adminHtml,
+    }),
+    transporter.sendMail({
+      from: `Dunn Behavioral Health <${fromAddress}>`,
+      to: data.email,
+      subject: "We received your intake form — Dunn Behavioral Health",
+      html: clientHtml,
+    }),
+  ]);
+}
