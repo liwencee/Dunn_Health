@@ -2,12 +2,14 @@ import nodemailer from "nodemailer";
 
 const ADMIN_EMAIL = "info@dunnbehavioralhealth.us";
 
-// Hostinger SMTP transporter.
+// Titan Email (Hostinger) SMTP transporter.
 // Set EMAIL_USER / EMAIL_PASS in your environment (see .env.local.example).
 // EMAIL_USER should be a real mailbox created in hPanel (e.g. info@dunnbehavioralhealth.us).
+// NOTE: this mailbox is a Titan Email account, so the host is smtp.titan.email
+// (NOT smtp.hostinger.com — that one returns "535 authentication failed").
 function createTransporter() {
   return nodemailer.createTransport({
-    host: process.env.EMAIL_HOST || "smtp.hostinger.com",
+    host: process.env.EMAIL_HOST || "smtp.titan.email",
     port: Number(process.env.EMAIL_PORT) || 465,
     secure: true, // SSL on port 465
     auth: {
