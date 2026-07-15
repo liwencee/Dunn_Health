@@ -9,7 +9,8 @@ const slides = [
   {
     id: 0,
     image: "/maggie_Front.jpeg",
-    position: "50% 22%",
+    fit: "contain" as const,
+    position: "right center",
     title: "Your Journey to\nHealing Starts Here",
     subtitle:
       "Professional behavioral health services in Kingsland, Georgia — and virtually across the state.",
@@ -19,6 +20,7 @@ const slides = [
   {
     id: 1,
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=85",
+    fit: "cover" as const,
     position: "center",
     title: "Compassionate Care\nfor Mind & Soul",
     subtitle:
@@ -76,7 +78,7 @@ export function HeroSlider() {
           animate="center"
           exit="exit"
           transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
-          style={{ position: "absolute", inset: 0 }}
+          style={{ position: "absolute", inset: 0, backgroundColor: "var(--primary-dark)" }}
         >
           <Image
             src={slide.image}
@@ -84,7 +86,7 @@ export function HeroSlider() {
             fill
             priority
             sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: slide.position || "center" }}
+            style={{ objectFit: slide.fit || "cover", objectPosition: slide.position || "center" }}
           />
           {/* Dark gradient overlay */}
           <div style={{
