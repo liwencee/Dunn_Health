@@ -8,9 +8,9 @@ import Link from "next/link";
 const slides = [
   {
     id: 0,
-    image: "/maggie_Front.jpeg",
-    fit: "contain" as const,
-    position: "right center",
+    image: "/maggie-dunn.jpg",
+    fit: "cover" as const,
+    position: "center 30%",
     title: "Your Journey to\nHealing Starts Here",
     subtitle:
       "Professional behavioral health services in Kingsland, Georgia — and virtually across the state.",
