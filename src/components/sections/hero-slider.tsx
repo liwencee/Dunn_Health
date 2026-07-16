@@ -4,12 +4,28 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { maggieBlur } from "@/lib/hero-blur";
 
-const slides = [
+type Slide = {
+  id: number;
+  image: string;
+  fit: "cover" | "contain";
+  position: string;
+  title: string;
+  subtitle: string;
+  cta: { label: string; href: string };
+  ctaSecondary: { label: string; href: string };
+  blur?: string;
+  unoptimized?: boolean;
+};
+
+const slides: Slide[] = [
   {
     id: 0,
-    image: "/maggie-dunn.jpg",
-    fit: "cover" as const,
+    image: "/maggie-dunn.webp",
+    blur: maggieBlur,
+    unoptimized: true,
+    fit: "cover",
     position: "center 30%",
     title: "Your Journey to\nHealing Starts Here",
     subtitle:
@@ -20,7 +36,7 @@ const slides = [
   {
     id: 1,
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=85",
-    fit: "cover" as const,
+    fit: "cover",
     position: "center",
     title: "Compassionate Care\nfor Mind & Soul",
     subtitle:
@@ -85,6 +101,9 @@ export function HeroSlider() {
             alt={slide.title}
             fill
             priority
+            unoptimized={slide.unoptimized}
+            placeholder={slide.blur ? "blur" : undefined}
+            blurDataURL={slide.blur}
             sizes="100vw"
             style={{ objectFit: slide.fit || "cover", objectPosition: slide.position || "center" }}
           />

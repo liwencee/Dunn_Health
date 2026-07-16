@@ -1,0 +1,2 @@
+// Auto-generated blur placeholder for the hero image (tiny, inlined).
+export const maggieBlur = "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBQCdASoUAB4APu1kqU2ppaOiMAgBMB2JQBfrKHhTEZeZrQhBczyCqSh8RGzP2DnZKAD+gF454eiY4knWrB8pR0TnWoMBljl05X5N1GTuo3WGxVenN1Fsp36veLfgu+tshLOCsTqMq/StdB9QENmDe2dyTVMoWwcNdBIQCYG1c0JL72NIUOUllvt3KTtxmyuKXhSLOcko25RfHQaX+Hc8DtTtgAAA";
