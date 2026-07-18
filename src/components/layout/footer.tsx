@@ -4,23 +4,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { label: "Individual Therapy", href: "/services#individual" },
-  { label: "Family Therapy", href: "/services#family" },
-  { label: "Teen Support", href: "/services#teen" },
-  { label: "Anxiety & Depression", href: "/services#anxiety" },
+  { label: "Individual Counseling", href: "/services#individual" },
   { label: "Trauma & PTSD (TF-CBT)", href: "/services#trauma" },
-  { label: "Assessment & Treatment Planning", href: "/services#assessment" },
-  { label: "Clinical Supervision", href: "/services#supervision" },
+  { label: "Anxiety & Depression", href: "/services#anxiety" },
+  { label: "Faith-Based Counseling", href: "/services#faith" },
+  { label: "Telehealth", href: "/services#telehealth" },
+  { label: "Clinical Supervision", href: "/supervision" },
+  { label: "Whole-Person Wellness", href: "/wellness" },
 ];
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "About Maggie", href: "/about" },
+  { label: "Counseling Services", href: "/services" },
+  { label: "Clinical Supervision", href: "/supervision" },
+  { label: "Resources", href: "/resources" },
+  { label: "FAQ", href: "/faq" },
   { label: "Intake Form", href: "/intake" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
-  { label: "Book Appointment", href: "/contact" },
 ];
 
 const socials = [

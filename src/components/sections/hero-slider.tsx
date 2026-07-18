@@ -27,11 +27,11 @@ const slides: Slide[] = [
     unoptimized: true,
     fit: "cover",
     position: "center 30%",
-    title: "Your Journey to\nHealing Starts Here",
+    title: "Compassionate, Evidence-Based Counseling\nfor Children, Teens, Adults & Older Adults",
     subtitle:
-      "Professional behavioral health services in Kingsland, Georgia — and virtually across the state.",
-    cta: { label: "Book Appointment", href: "/contact" },
-    ctaSecondary: { label: "Our Services", href: "/services" },
+      "Helping individuals heal, grow, and thrive through personalized, trauma-informed care.",
+    cta: { label: "Request an Appointment", href: "/contact" },
+    ctaSecondary: { label: "About Maggie", href: "/about" },
   },
   {
     id: 1,

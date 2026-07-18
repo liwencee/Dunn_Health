@@ -56,29 +56,43 @@ export default function AboutPage() {
             <span className="section-label">Meet the Owner</span>
             <h2 className="section-title">Meet <span>Maggie</span></h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "3rem", alignItems: "start", maxWidth: 900, margin: "0 auto" }}>
-            <div style={{ position: "relative", aspectRatio: "4/5", borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 30px rgba(37,99,235,0.12)", border: "1px solid var(--border)" }}>
-              <Image src="/maggie-dunn.jpg" alt="Maggie Dunn, LPC, NCC, CPCS" fill sizes="400px" style={{ objectFit: "cover" }} />
-            </div>
-            <div>
-              <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.8rem", color: "var(--primary)", marginBottom: "0.25rem" }}>Maggie Dunn</h3>
-              <div style={{ color: "var(--accent)", fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(240px, 320px) 1fr", gap: "3rem", alignItems: "start", maxWidth: 1040, margin: "0 auto" }} className="meet-grid">
+            <div style={{ position: "sticky", top: "6rem" }}>
+              <div style={{ position: "relative", aspectRatio: "4/5", borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 30px rgba(37,99,235,0.12)", border: "1px solid var(--border)" }}>
+                <Image src="/maggie-dunn.jpg" alt="Maggie Dunn, LPC, NCC, CPCS" fill sizes="320px" style={{ objectFit: "cover" }} />
+              </div>
+              <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.8rem", color: "var(--primary)", marginTop: "1.25rem", marginBottom: "0.25rem" }}>Maggie Dunn</h3>
+              <div style={{ color: "var(--accent)", fontWeight: 700, fontSize: "0.82rem", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
                 Owner &amp; Therapist · LPC, NCC, CPCS
               </div>
-              <p style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.25rem", fontSize: "0.98rem" }}>
-                I&apos;m a Licensed Professional Counselor (LPC), National Certified Counselor (NCC), and Certified Professional Counselor Supervisor (CPCS), and the owner of this individual private practice. I work with individuals, teens, and families using Cognitive Behavioral Therapy, Trauma-Focused CBT (ages 5–18), Solution-Focused Brief Therapy, and Person-Centered Therapy.
-              </p>
-              <p style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.5rem", fontSize: "0.98rem" }}>
-                As a CPCS, I also provide clinical supervision for associate counselors working toward full LPC licensure in Georgia — individually or in small groups, in-person or virtually.
-              </p>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <Link href="/contact" className="btn-primary" style={{ fontSize: "0.85rem" }}>Book a Session</Link>
                 <Link href="/services#supervision" style={{ color: "var(--primary)", fontWeight: 700, fontSize: "0.9rem", alignSelf: "center" }}>
-                  Learn About Supervision →
+                  Supervision →
                 </Link>
               </div>
             </div>
+            <div>
+              <p style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.6rem", lineHeight: 1.4, color: "var(--primary)", fontWeight: 600, borderLeft: "4px solid var(--accent)", paddingLeft: "1.25rem", marginBottom: "2rem" }}>
+                Helping people heal isn&apos;t simply my profession — it&apos;s my purpose.
+              </p>
+              {[
+                "My journey into the mental health field began in 1999 while working with survivors of Hurricane Floyd in North Carolina. Witnessing the resilience of individuals and families during one of the most difficult seasons of their lives inspired a lifelong commitment to helping others find hope, healing, and renewed purpose.",
+                "Today, with more than 25 years of experience in behavioral health, I have had the privilege of serving clients in clinical, leadership, consulting, and supervisory roles. Throughout my career I have worked as a paraprofessional, therapist, Qualified Professional, program director, clinical director, quality assurance and quality improvement specialist, Medicaid compliance consultant, and clinical supervisor. These diverse experiences have given me a comprehensive understanding of behavioral healthcare while reinforcing one central belief: every person deserves compassionate, individualized care.",
+                "I earned my Master’s degree in Mental Health Counseling from Capella University and am licensed as a Licensed Professional Counselor in both Georgia and North Carolina. I am also a National Certified Counselor (NCC) and a Certified Professional Counselor Supervisor (CPCS), providing supervision for associate counselors pursuing licensure in Georgia. I have completed extensive training in Trauma-Focused Cognitive Behavioral Therapy (TF-CBT) and am preparing to complete my certification and become nationally rostered.",
+                "My passion is helping children, adolescents, adults, and older adults navigate life’s challenges, including trauma, anxiety, depression, grief, stress, life transitions, relationship concerns, and personal growth. I believe counseling should be a collaborative process where clients feel safe, heard, respected, and empowered to create lasting change.",
+                "As a Christian, my faith is the foundation of my life and influences the compassion, integrity, and hope I strive to bring into every interaction. For clients who desire faith-based counseling, I am honored to thoughtfully integrate biblical principles with evidence-based therapeutic approaches while always respecting each person’s beliefs, values, and treatment goals.",
+                "Outside the counseling office, I am a proud North Carolina native, entrepreneur, and the mother of an amazing adult son. I believe in lifelong learning and am passionate about helping people grow mentally, emotionally, physically, spiritually, and financially.",
+                "Beyond providing therapy, I have spent much of my career strengthening behavioral healthcare systems through clinical leadership, program development, quality assurance and improvement, Medicaid compliance consulting, audit preparation, and supervising the next generation of counselors. These experiences have given me a unique perspective that allows me to serve clients with both compassion and clinical excellence.",
+                "No matter what season of life you’re facing, you don’t have to walk through it alone. Healing is possible, hope is real, and taking the first step toward change can make all the difference. It would be my privilege to walk alongside you on your journey toward healing and wholeness.",
+              ].map((para, i) => (
+                <p key={i} style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: "1.25rem", fontSize: "0.98rem" }}>
+                  {para}
+                </p>
+              ))}
+            </div>
           </div>
+          <style>{`@media (max-width: 720px){ .meet-grid{ grid-template-columns: 1fr !important; } .meet-grid > div:first-child{ position: static !important; } }`}</style>
         </div>
       </section>
     </>

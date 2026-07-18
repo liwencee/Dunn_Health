@@ -3,6 +3,7 @@ import { HeroSlider } from "@/components/sections/hero-slider";
 import { ServicesSection } from "@/components/sections/services";
 import { AboutSection } from "@/components/sections/about";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
+import { WellnessPreview } from "@/components/sections/wellness-preview";
 import { CTASection } from "@/components/sections/cta";
 import { ContactPreview } from "@/components/sections/contact-preview";
 
@@ -19,6 +20,7 @@ export default function HomePage() {
       <ServicesSection />
       <AboutSection />
       <WhyChooseUs />
+      <WellnessPreview />
       <CTASection />
       <ContactPreview />
     </>

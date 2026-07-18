@@ -4,34 +4,34 @@ import { motion } from "framer-motion";
 
 const reasons = [
   {
+    icon: "📅",
+    title: "25+ Years of Experience",
+    desc: "More than two and a half decades in behavioral health — as a therapist, clinical director, supervisor, and consultant.",
+  },
+  {
+    icon: "📜",
+    title: "Licensed in GA & NC",
+    desc: "A Licensed Professional Counselor in both Georgia and North Carolina, and a National Certified Counselor (NCC).",
+  },
+  {
     icon: "🎓",
-    title: "Evidence-Based Treatment",
-    desc: "I use scientifically validated approaches including CBT, TF-CBT, Solution-Focused, and Person-Centered therapy, matched to your needs.",
+    title: "Certified Supervisor (CPCS)",
+    desc: "A Certified Professional Counselor Supervisor, training and mentoring the next generation of Georgia counselors.",
   },
   {
-    icon: "🔒",
-    title: "Confidential & Safe",
-    desc: "Your privacy is my priority. All sessions are completely confidential and conducted in a judgment-free environment.",
-  },
-  {
-    icon: "💻",
-    title: "Telehealth Available",
-    desc: "Access therapy from the comfort of your home through secure video sessions — with virtual coverage across all of Georgia.",
+    icon: "🕊️",
+    title: "Trauma-Informed Care",
+    desc: "Extensively trained in Trauma-Focused CBT (TF-CBT), with care that centers safety, trust, and lasting healing.",
   },
   {
     icon: "🏥",
-    title: "Insurance Accepted",
-    desc: "I accept CareSource GA (including Tricare), Amerigroup GA, and Self-Pay — with more plans being added as I get in-network.",
+    title: "Clinical Leadership & Compliance",
+    desc: "Deep expertise in clinical leadership, program development, quality assurance, and Medicaid compliance.",
   },
   {
     icon: "🤝",
-    title: "Personalized, One-on-One Care",
-    desc: "As a solo private practice, you work with me directly every session — no rotating providers, no hand-offs.",
-  },
-  {
-    icon: "🎯",
-    title: "Licensed & Supervision-Qualified",
-    desc: "LPC, NCC, and CPCS credentialed — I also provide clinical supervision for those pursuing licensure in Georgia.",
+    title: "Personalized Treatment",
+    desc: "As a solo private practice, you work with me directly every session — care built around your goals, values, and season of life.",
   },
 ];
 
@@ -56,13 +56,13 @@ export function WhyChooseUs() {
             fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.15em",
             textTransform: "uppercase", padding: "0.35rem 1rem", borderRadius: 50, marginBottom: "1rem",
           }}>
-            Why Choose Us
+            Why Choose Maggie
           </span>
           <h2 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(2rem, 4vw, 3rem)", color: "#fff", marginBottom: "1rem" }}>
-            The Dunn Difference
+            Experience, Compassion & Clinical Excellence
           </h2>
           <p style={{ color: "rgba(255,255,255,0.7)", maxWidth: 580, margin: "0 auto", lineHeight: 1.7 }}>
-            We combine clinical excellence with genuine compassion — creating an experience that feels both professional and deeply human.
+            I combine more than 25 years of clinical experience with genuine compassion — care that feels both professional and deeply human.
           </p>
         </div>
 

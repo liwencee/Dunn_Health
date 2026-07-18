@@ -7,10 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Intake Form", href: "/intake" },
-  { label: "Blog", href: "/blog" },
+  { label: "About Maggie", href: "/about" },
+  { label: "Counseling", href: "/services" },
+  { label: "Supervision", href: "/supervision" },
+  { label: "Wellness", href: "/wellness" },
+  { label: "Resources", href: "/resources" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -63,7 +65,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav style={{ display: "flex", alignItems: "center", gap: "2rem" }} className="desktop-nav">
+        <nav style={{ display: "flex", alignItems: "center", gap: "1.35rem" }} className="desktop-nav">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -71,9 +73,10 @@ export function Header() {
               style={{
                 color: "var(--primary, #2563EB)",
                 textDecoration: "none",
-                fontSize: "0.9rem",
+                fontSize: "0.78rem",
                 fontWeight: 600,
-                letterSpacing: "0.04em",
+                letterSpacing: "0.03em",
+                whiteSpace: "nowrap",
                 transition: "color 0.2s",
                 textTransform: "uppercase",
               }}
@@ -83,8 +86,8 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-primary" style={{ fontSize: "0.82rem", padding: "0.6rem 1.4rem" }}>
-            Book Appointment
+          <Link href="/contact" className="btn-primary" style={{ fontSize: "0.78rem", padding: "0.55rem 1.2rem", whiteSpace: "nowrap" }}>
+            Book
           </Link>
         </nav>
 
@@ -137,7 +140,7 @@ export function Header() {
       </AnimatePresence>
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
           .topbar-address { display: none !important; }
