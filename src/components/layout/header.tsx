@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Counseling", href: "/services" },
   { label: "Supervision", href: "/supervision" },
   { label: "Wellness", href: "/wellness" },
+  { label: "Intake/Referral", href: "/intake" },
   { label: "Resources", href: "/resources" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
@@ -65,7 +66,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav style={{ display: "flex", alignItems: "center", gap: "1.35rem" }} className="desktop-nav">
+        <nav style={{ display: "flex", alignItems: "center", gap: "1.05rem" }} className="desktop-nav">
           {navLinks.map((link) => (
             <Link
               key={link.href}

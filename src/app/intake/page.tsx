@@ -212,12 +212,12 @@ export default function IntakePage() {
       {/* Hero */}
       <section style={{ paddingTop: "10rem", paddingBottom: "4rem", background: "linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%)", textAlign: "center" }}>
         <div className="container">
-          <span className="section-label" style={{ backgroundColor: "rgba(147,51,234,0.2)", color: "var(--accent-light)" }}>New Clients</span>
+          <span className="section-label" style={{ backgroundColor: "rgba(147,51,234,0.2)", color: "var(--accent-light)" }}>New Clients &amp; Referrals</span>
           <h1 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "clamp(2.3rem, 6vw, 3.6rem)", color: "#fff", marginTop: "0.5rem", marginBottom: "1rem" }}>
-            Client Intake Form
+            Intake &amp; Referral Form
           </h1>
           <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.05rem", maxWidth: 620, margin: "0 auto" }}>
-            Please complete this form before your first appointment. Your information is kept confidential and helps us provide the best possible care.
+            Whether you&apos;re starting care yourself or referring someone, please complete this form before the first appointment. Your information is kept confidential and helps me provide the best possible care.
           </p>
         </div>
       </section>
