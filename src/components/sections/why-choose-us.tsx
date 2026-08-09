@@ -20,8 +20,8 @@ const reasons = [
   },
   {
     icon: "🕊️",
-    title: "Trauma-Informed Care",
-    desc: "Extensively trained in Trauma-Focused CBT (TF-CBT), with care that centers safety, trust, and lasting healing.",
+    title: "Certified in TF-CBT",
+    desc: "A Certified, nationally rostered Trauma-Focused CBT (TF-CBT) therapist — care that centers safety, trust, and lasting healing.",
   },
   {
     icon: "🏥",
