@@ -73,8 +73,17 @@ export default function WellnessPage() {
             </p>
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+          <div style={{ textAlign: "center", marginTop: "3rem", display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/contact" className="btn-primary">Ask About Wellness</Link>
+            <a
+              href="https://lifewave.com/patchMD"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ backgroundColor: "var(--pink)" }}
+            >
+              More on Wellness
+            </a>
           </div>
         </div>
       </section>
