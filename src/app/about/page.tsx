@@ -59,11 +59,13 @@ export default function AboutPage() {
           <div style={{ display: "grid", gridTemplateColumns: "minmax(240px, 320px) 1fr", gap: "3rem", alignItems: "start", maxWidth: 1040, margin: "0 auto" }} className="meet-grid">
             <div style={{ position: "sticky", top: "6rem" }}>
               <div style={{ position: "relative", aspectRatio: "4/5", borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 30px rgba(37,99,235,0.12)", border: "1px solid var(--border)" }}>
-                <Image src="/maggie-dunn.jpg" alt="Maggie Dunn, LPC, NCC, CPCS" fill sizes="320px" style={{ objectFit: "cover" }} />
+                <Image src="/maggie-dunn.jpg" alt="Maggie Dunn, LPC, NCC, CPCS, and Certified TF-CBT Provider" fill sizes="320px" style={{ objectFit: "cover" }} />
               </div>
-              <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.8rem", color: "var(--primary)", marginTop: "1.25rem", marginBottom: "0.25rem" }}>Maggie Dunn</h3>
+              <h3 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.8rem", color: "var(--primary)", marginTop: "1.25rem", marginBottom: "0.25rem" }}>
+                Maggie Dunn, LPC, NCC, CPCS, and Certified TF-CBT Provider
+              </h3>
               <div style={{ color: "var(--accent)", fontWeight: 700, fontSize: "0.82rem", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
-                Owner &amp; Therapist · LPC, NCC, CPCS · Certified TF-CBT Therapist
+                Owner &amp; Therapist
               </div>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <Link href="/contact" className="btn-primary" style={{ fontSize: "0.85rem" }}>Book a Session</Link>
